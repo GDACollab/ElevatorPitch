@@ -22,11 +22,6 @@ public class Controller : MonoBehaviour
         //controls.IngameControls.Buttons.performed += ctx => move = ctx.ReadValue<>();
     }
     */
-    void OnMovement(InputValue value)
-    {
-        Vector2 move = value.Get<Vector2>();
-        Debug.Log(move);
-    }
     /*
     private void Update()
     {
