@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6452511060140210731}
   - component: {fileID: 3644739009865205841}
   m_Layer: 0
-  m_Name: Boundary
+  m_Name: CollideBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
