@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        textDisplay.text = maxTime.ToString();
+        textDisplay.text = "Time: " + maxTime.ToString();
         StartCoroutine(waitTime());
     }
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
@@ -21,9 +21,9 @@ public class Timer : MonoBehaviour
         while (timeSet > 0)
         {
             yield return new WaitForSeconds(1);
-            Debug.Log(timeSet);
+            //Debug.Log(timeSet);
             timeSet--;
-            textDisplay.text = timeSet.ToString();
+            textDisplay.text = "Time: " + timeSet.ToString();
         }
     }
 }
