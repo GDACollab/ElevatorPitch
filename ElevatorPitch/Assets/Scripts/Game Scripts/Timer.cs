@@ -8,9 +8,13 @@ public class Timer : MonoBehaviour
     public Text textDisplay = null;
     // Start is called before the first frame update
     public int maxTime = 10;
+    private GameObject persistentDataObj;
+    private persistentData persistentDataScript;
 
     void Start()
     {
+        persistentDataObj = GameObject.FindGameObjectWithTag("persData");
+        persistentDataScript = persistentDataObj.GetComponent<persistentData>();
         textDisplay.text = "Time: " + maxTime.ToString();
         StartCoroutine(waitTime());
     }
@@ -25,5 +29,6 @@ public class Timer : MonoBehaviour
             timeSet--;
             textDisplay.text = "Time: " + timeSet.ToString();
         }
+        persistentDataScript.nextLevel();
     }
 }

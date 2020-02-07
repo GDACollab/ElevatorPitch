@@ -6,7 +6,7 @@ public class enemy_movement : MonoBehaviour
 {
     public float thrust = 1.1f;
     public float waitTime = 2.0f;
-    public Rigidbody enemy;
+    private Rigidbody2D self;
     public float pausetime = 3.0f;
     private float timer = 0.0f;
     public float endpos = 4.0f;
@@ -18,7 +18,7 @@ public class enemy_movement : MonoBehaviour
     void Start()
     {
         start = this.gameObject.transform.position;
-        enemy = GetComponent<Rigidbody>();
+        self = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class enemy_movement : MonoBehaviour
                 }
                 else
                 {*/
-                    enemy.AddForce(-transform.right * thrust);
+                    self.AddForce(-transform.right * thrust);
                 //}
                 
             }
@@ -58,7 +58,7 @@ public class enemy_movement : MonoBehaviour
                 }
                 else
                 {*/
-                    enemy.AddForce(transform.right * thrust);
+                    self.AddForce(transform.right * thrust);
                 //}
                 
             }
@@ -67,11 +67,11 @@ public class enemy_movement : MonoBehaviour
         {
             if (start.y + endpos < this.gameObject.transform.position.y)
             {
-                enemy.AddForce(-transform.up * thrust);
+                self.AddForce(-transform.up * thrust);
             }
             else if (start.y + endpos > this.gameObject.transform.position.y)
             {
-                enemy.AddForce(transform.up * thrust);
+                self.AddForce(transform.up * thrust);
             }
         }
         

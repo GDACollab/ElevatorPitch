@@ -6,6 +6,7 @@ public class WinCondition : MonoBehaviour
 {
     public int gameModeTemplate;
     public GoalComplete player1, player2, player3, player4;
+    
 
     public void goalCompletionCheck(int gameMode)
     {

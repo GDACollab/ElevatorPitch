@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     {
         move = value.Get<Vector2>();
         Debug.Log(move);
+
     }
     void OnUpButton()
     {
@@ -39,6 +40,10 @@ public class PlayerControl : MonoBehaviour
             transform.localPosition = transform.localPosition += 
             new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
             Rotation();
+        } else
+        {
+           
+            
         }
     }
     void Rotation()
