@@ -278,6 +278,16 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Ingame Controls
       objectReference: {fileID: 0}
+    - target: {fileID: 3705504282659492500, guid: eb54d70d9ee48f7419421a5d7a1e982b,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705504282659492500, guid: eb54d70d9ee48f7419421a5d7a1e982b,
+        type: 3}
+      propertyPath: interpolation
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3705504282659492510, guid: eb54d70d9ee48f7419421a5d7a1e982b,
         type: 3}
       propertyPath: m_Name

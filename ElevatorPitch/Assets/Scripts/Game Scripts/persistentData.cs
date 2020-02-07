@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class persistentData : MonoBehaviour
 {
@@ -49,4 +50,11 @@ public class persistentData : MonoBehaviour
     //    timerStartPoint = floorNum * floorNum; //not actually how we are going to calculate, just an example
     //    return timerStartPoint;
     //}
+
+
+    public void nextLevel()
+    {
+        Debug.Log("NEXT LEVEL");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
