@@ -7,6 +7,9 @@ TagManager:
   - goal 1
   - enemy
   - persData
+  - goal 0
+  - goal 2
+  - goal 3
   layers:
   - Default
   - TransparentFX

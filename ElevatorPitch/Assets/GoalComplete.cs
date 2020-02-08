@@ -10,11 +10,13 @@ public class GoalComplete : MonoBehaviour
     [SerializeField]
     private string goalTag;
     private PlayerInput playerInput;
+    int playerIndex;
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        goalTag = "goal 1";
-        int playerIndex = playerInput.playerIndex;
+        playerIndex = playerInput.playerIndex;
+        goalTag = "goal " + playerIndex;
+        
         Debug.Log(playerIndex);
     }
     public bool IsGoalComplete
@@ -31,11 +33,13 @@ public class GoalComplete : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.collider);
-        Debug.Log(collision.transform.tag);
-        if(collision.transform.tag == goalTag)
+        //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.collider);
+        Debug.Log(collision.transform.tag + " == " + (goalTag + " " + playerIndex.ToString()));
+
+        if(collision.transform.CompareTag(goalTag))
         {
             IsGoalComplete = true;
+            Debug.Log("goal complete");
             //do something with persistant data;
             Destroy(gameObject);
         }
