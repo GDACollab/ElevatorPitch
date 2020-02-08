@@ -10,11 +10,19 @@ public class PlayerControl : MonoBehaviour
 
     Vector2 move;
     public float movementSpeed;
+    private SpriteRenderer sr;
+
+    private void Start()
+    {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+
+    }
+
 
     void OnMovement(InputValue value)
     {
         move = value.Get<Vector2>();
-        Debug.Log(move);
+        //Debug.Log(move);
 
     }
     void OnUpButton()
@@ -40,16 +48,12 @@ public class PlayerControl : MonoBehaviour
             transform.localPosition = transform.localPosition += 
             new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
             Rotation();
-        } else
-        {
-           
-            
         }
     }
     void Rotation()
     {
         float angle = Mathf.Atan2(move.y, move.x) * 180/Mathf.PI;
-        Debug.Log(angle);
+        //Debug.Log(angle);
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), interpolation * Time.deltaTime);
     }
 }
