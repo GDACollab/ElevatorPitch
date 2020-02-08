@@ -10,9 +10,11 @@ public class persistentData : MonoBehaviour
     int[] scores = new int[4];
     int floorNum;
     float timerStartPoint;
-  
+    private AudioSource audioSource;
+
     void Start()
     {
+        
         floorNum = 0;
         scores[0] = 0;
         scores[1] = 0;
@@ -25,12 +27,20 @@ public class persistentData : MonoBehaviour
     //singleton pattern
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        } else
+        {
+            audioSource.Stop();
+        }
         if(main == null)
         {
             main = this;
             DontDestroyOnLoad(transform);
         } else {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
