@@ -11,6 +11,9 @@ public class Timer : MonoBehaviour
     private GameObject persistentDataObj;
     private persistentData persistentDataScript;
 
+    //Animation of elevator doors
+    public Animator transition;
+
     void Start()
     {
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
@@ -29,6 +32,10 @@ public class Timer : MonoBehaviour
             timeSet--;
             textDisplay.text = "Time: " + timeSet.ToString();
         }
+
+        //Added by Santiago. Does the elevator door animation before loading next level
+        transition.SetTrigger("Close Doors");
+        yield return new WaitForSeconds(1);
         persistentDataScript.nextLevel();
     }
 }
