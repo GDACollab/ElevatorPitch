@@ -65,7 +65,8 @@ public class persistentData : MonoBehaviour
     public void nextLevel()
     {
         Debug.Log("NEXT LEVEL");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 
 
