@@ -10,11 +10,13 @@ public class Timer : MonoBehaviour
     public int maxTime = 10;
     private GameObject persistentDataObj;
     private persistentData persistentDataScript;
+    private WinCondition winCondition;
 
     void Start()
     {
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
         persistentDataScript = persistentDataObj.GetComponent<persistentData>();
+        winCondition = persistentDataObj.GetComponent<WinCondition>();
         textDisplay.text = "Time: " + maxTime.ToString();
         StartCoroutine(waitTime());
     }
@@ -29,6 +31,7 @@ public class Timer : MonoBehaviour
             timeSet--;
             textDisplay.text = "Time: " + timeSet.ToString();
         }
+        winCondition.goalCompletionCheck(winCondition.gameModeTemplate);
         persistentDataScript.nextLevel();
     }
 }

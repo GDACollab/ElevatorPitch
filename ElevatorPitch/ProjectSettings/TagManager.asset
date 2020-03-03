@@ -10,6 +10,8 @@ TagManager:
   - goal 0
   - goal 2
   - goal 3
+  - GameMode
+  - Timer
   layers:
   - Default
   - TransparentFX
