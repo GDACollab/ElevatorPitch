@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 3
   textDisplay: {fileID: 1803944033}
+  firstMinigame: 1
 --- !u!1 &1650954889
 GameObject:
   m_ObjectHideFlags: 0

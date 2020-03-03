@@ -22,7 +22,8 @@ public class MinigameLoader : MonoBehaviour
          * Important: If more non-minigame scenes are added, make sure to adjust the firstMinigame variable 
          * to make sure they are not selected by accident
          * */
-        int nextGame = Random.Range(firstMinigame, SceneManager.sceneCount);
+        //Debug.Log(SceneManager.sceneCountInBuildSettings);
+        int nextGame = Random.Range(firstMinigame, SceneManager.sceneCountInBuildSettings);
 
         //Add more instructions when adding new minigames
         int cubicleRush = firstMinigame;
@@ -40,7 +41,7 @@ public class MinigameLoader : MonoBehaviour
 
     IEnumerator waitTime(int scene)
     {
-        Debug.Log(scene);
+        //Debug.Log(scene);
         yield return new WaitForSeconds(0.5f);
         textDisplay.text = instructions; //Display instructions
 
@@ -49,7 +50,7 @@ public class MinigameLoader : MonoBehaviour
             yield return new WaitForSeconds(1); //Wait a few seconds
             maxTime--;
         }
-        Debug.Log("Loading next scene");
-        SceneManager.LoadScene(scene, LoadSceneMode.Single); //Load scene
+        //Debug.Log("Loading next scene");
+        SceneManager.LoadScene(scene); //Load scene
     }
 }
