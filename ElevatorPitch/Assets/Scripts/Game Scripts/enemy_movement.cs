@@ -8,12 +8,12 @@ public class enemy_movement : MonoBehaviour
     public float waitTime = 2.0f;
     private Rigidbody2D self;
     public float pausetime = 3.0f;
-    private float timer = 0.0f;
+    //private float timer = 0.0f;
     public float endpos = 4.0f;
     public Vector3 start; 
     public bool moveleftright = false;
     public bool moveupdown = false;
-    private bool swit = false;
+    //private bool swit = false;
     // Start is called before the first frame update
     void Start()
     {

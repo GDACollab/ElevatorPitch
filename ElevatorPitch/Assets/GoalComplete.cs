@@ -11,12 +11,13 @@ public class GoalComplete : MonoBehaviour
     private string goalTag;
     private PlayerInput playerInput;
     int playerIndex;
+    persistentData perisistentData;
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         playerIndex = playerInput.playerIndex;
         goalTag = "goal " + playerIndex;
-        
+        perisistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
         Debug.Log(playerIndex);
     }
     public bool IsGoalComplete
@@ -40,13 +41,14 @@ public class GoalComplete : MonoBehaviour
         {
             IsGoalComplete = true;
             Debug.Log("goal complete");
+            perisistentData.setFinishTime(playerIndex);
             //do something with persistant data;
             Destroy(gameObject);
         }
         if(collision.transform.tag == "enemy")
-        {
-            
+        {   
             isGoalComplete = false;
+            perisistentData.setFinishTime(playerIndex);
             Destroy(gameObject);
         }
     }

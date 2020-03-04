@@ -7,19 +7,24 @@ public class persistentData : MonoBehaviour
 {
     //initializing variables
     public static persistentData main;
-    int[] scores = new int[4];
-    int floorNum;
+    public int[] scores = new int[4];
+    public int[] finishTimes = new int[4];
+    //int floorNum;
     float timerStartPoint;
     private AudioSource audioSource;
+    //private Timer timer;
 
     void Start()
     {
-        
-        floorNum = 0;
+        //floorNum = 0;
         scores[0] = 0;
         scores[1] = 0;
         scores[2] = 0;
         scores[3] = 0;
+        //finishTimes[0] = 0;
+        //finishTimes[1] = 0;
+        //finishTimes[2] = 0;
+        //finishTimes[3] = 0;
 
     }
 
@@ -28,6 +33,7 @@ public class persistentData : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        //timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         if (!audioSource.isPlaying)
         {
             audioSource.Play();
@@ -46,7 +52,7 @@ public class persistentData : MonoBehaviour
 
     //any functions needed for getting or setting data
     //ex:
-    
+
     //public void updateScores(int x)
     //{ //this function doesnt actually do anything just an example, there will probably be something separate to control scores
     //    scores[0] =+ x;
@@ -61,6 +67,13 @@ public class persistentData : MonoBehaviour
     //    return timerStartPoint;
     //}
 
+    public void setFinishTime(int playerIndex)
+    {
+        Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        string[] temp = timer.textDisplay.text.Split(' ');
+        finishTimes[playerIndex] = int.Parse(temp[1]);
+        Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
+    }
 
     public void nextLevel()
     {
