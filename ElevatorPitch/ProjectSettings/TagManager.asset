@@ -19,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Obstacle
+  - Player Boundaries
+  - Player
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Elevator Doors
+    uniqueID: 3084069623
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
