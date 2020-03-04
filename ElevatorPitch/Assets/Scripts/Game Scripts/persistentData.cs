@@ -44,6 +44,12 @@ public class persistentData : MonoBehaviour
         }
     }
 
+
+    void OnPlayerJoined()
+    {
+        Debug.Log("PLAYER JOINED");
+    }
+
     //any functions needed for getting or setting data
     //ex:
     

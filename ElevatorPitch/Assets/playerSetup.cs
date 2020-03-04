@@ -11,15 +11,23 @@ public class playerSetup : MonoBehaviour
     private SpriteRenderer sr;
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         playerInput = GetComponent<PlayerInput>();
-        int playerIndex = playerInput.playerIndex;
-        sr.sprite = playerSprites[playerIndex];
+    }
+
+    public void setup(int index)
+    {
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = playerSprites[index];
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        playerInput.enabled = true;
     }
 }

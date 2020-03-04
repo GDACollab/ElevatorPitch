@@ -10,6 +10,7 @@ TagManager:
   - goal 0
   - goal 2
   - goal 3
+  - PCM
   layers:
   - Default
   - TransparentFX

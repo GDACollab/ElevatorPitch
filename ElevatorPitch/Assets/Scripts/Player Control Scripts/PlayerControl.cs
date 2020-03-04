@@ -11,11 +11,12 @@ public class PlayerControl : MonoBehaviour
     Vector2 move;
     public float movementSpeed;
     private SpriteRenderer sr;
+    public GameObject pawn;
 
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-
+        
     }
 
 
@@ -45,7 +46,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (move != Vector2.zero)
         {
-            transform.localPosition = transform.localPosition += 
+            pawn.transform.localPosition = pawn.transform.localPosition += 
             new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
             Rotation();
         }
@@ -54,7 +55,7 @@ public class PlayerControl : MonoBehaviour
     {
         float angle = Mathf.Atan2(move.y, move.x) * 180/Mathf.PI;
         //Debug.Log(angle);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), interpolation * Time.deltaTime);
+        pawn.transform.rotation = Quaternion.Slerp(pawn.transform.rotation, Quaternion.Euler(0, 0, angle), interpolation * Time.deltaTime);
     }
 }
 
