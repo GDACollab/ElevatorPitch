@@ -9,15 +9,20 @@ public class playerSetup : MonoBehaviour
     private PlayerInput playerInput;
     public Sprite[] playerSprites;
     private SpriteRenderer sr;
-    void Start()
+    public int controllerIndex = -1;
+    public GoalComplete gc;
+    void Awake()
     {
+        gc = GetComponent<GoalComplete>();
         playerInput = GetComponent<PlayerInput>();
     }
-
+     
     public void setup(int index)
     {
+        controllerIndex = index;
         sr = GetComponent<SpriteRenderer>();
-        sr.sprite = playerSprites[index];
+        sr.sprite = playerSprites[controllerIndex];
+        gc.playerIndex = controllerIndex;
     }
 
     // Update is called once per frame
@@ -28,6 +33,6 @@ public class playerSetup : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.enabled = true;
+        //playerInput.enabled = true;
     }
 }

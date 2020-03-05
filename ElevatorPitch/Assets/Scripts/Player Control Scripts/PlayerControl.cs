@@ -44,11 +44,14 @@ public class PlayerControl : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (move != Vector2.zero)
+        if (pawn != null)
         {
-            pawn.transform.localPosition = pawn.transform.localPosition += 
-            new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
-            Rotation();
+            if (move != Vector2.zero)
+            {
+                pawn.transform.localPosition = pawn.transform.localPosition +=
+                new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
+                Rotation();
+            }
         }
     }
     void Rotation()
