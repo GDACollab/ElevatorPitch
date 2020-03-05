@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9148334877055427746}
   - component: {fileID: 7648191246763147710}
   - component: {fileID: 3047019609713163807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MovementScriptPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3705504282659492510}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-9148334877055427746
 BoxCollider2D:
   m_ObjectHideFlags: 0
