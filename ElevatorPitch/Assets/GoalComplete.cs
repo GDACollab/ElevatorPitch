@@ -10,15 +10,17 @@ public class GoalComplete : MonoBehaviour
     [SerializeField]
     private string goalTag;
     private PlayerInput playerInput;
-    int playerIndex;
+    private playerSetup setup;
+    public int playerIndex;
     persistentData perisistentData;
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerIndex = playerInput.playerIndex;
+        setup = GetComponent<playerSetup>();
+        playerIndex = setup.controllerIndex;
         goalTag = "goal " + playerIndex;
         perisistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
-        Debug.Log(playerIndex);
+        //Debug.Log(playerIndex);
     }
     public bool IsGoalComplete
     {
@@ -35,19 +37,21 @@ public class GoalComplete : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), collision.collider);
-        Debug.Log(collision.transform.tag + " == " + (goalTag + " " + playerIndex.ToString()));
+        //Debug.Log(collision.transform.tag + " == " + (goalTag + " " + playerIndex.ToString()));
 
         if(collision.transform.CompareTag(goalTag))
         {
             IsGoalComplete = true;
             Debug.Log("goal complete");
             perisistentData.setFinishTime(playerIndex);
+            perisistentData.complete[playerIndex] = true;
             //do something with persistant data;
             Destroy(gameObject);
         }
         if(collision.transform.tag == "enemy")
         {   
             isGoalComplete = false;
+            perisistentData.complete[playerIndex] = false;
             perisistentData.setFinishTime(playerIndex);
             Destroy(gameObject);
         }

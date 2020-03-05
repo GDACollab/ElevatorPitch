@@ -10,8 +10,7 @@ TagManager:
   - goal 0
   - goal 2
   - goal 3
-  - GameMode
-  - Timer
+  - PCM
   layers:
   - Default
   - TransparentFX
@@ -21,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - Obstacle
-  - Player Boundaries
-  - Player
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -46,9 +45,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Elevator Doors
-    uniqueID: 3084069623
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

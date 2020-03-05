@@ -16,16 +16,22 @@ public class WinCondition : MonoBehaviour
 
     public void goalCompletionCheck(int gameMode)
     {
-        List<int> times = new List<int>(persistentData.finishTimes);
+        List<float> times = new List<float>(persistentData.finishTimes);
         int points = 3;
         switch (gameMode)
         {
             case 0: //Reach Goal
-                while (Mathf.Max(times.ToArray()) != -1)
+                while (Mathf.Max(times.ToArray()) != -100)
                 {
-                    int max = Mathf.Max(times.ToArray()); //Get fastest time
+                    
+                    float max = Mathf.Max(times.ToArray()); //Get fastest time
+                    if (persistentData.complete[times.IndexOf(max)] == false && max < -20)
+                    {
+                        times[times.IndexOf(max)] = max - 20;
+                        continue;
+                    }
                     int count = 0;
-                    for(int i = 0; i < 4; i++) //Check for players w/ same score
+                    for(int i = 0; i < 4; i++) //Check for players w/ same time
                     {
                         if(max == times[i])
                         {
@@ -37,14 +43,14 @@ public class WinCondition : MonoBehaviour
                     {
                         points--;
                     }
-                    times[times.IndexOf(max)] = -1;
+                    times[times.IndexOf(max)] = -100;
                 }
                 printDebugScores();
                 return;
             case 1: //Survive
                 while(Mathf.Max(times.ToArray()) != -1)
                 {
-                    int min = Mathf.Min(times.ToArray()); //Get smallest number(Lowest time)
+                    float min = Mathf.Min(times.ToArray()); //Get biggest number(longest time)
                     int count = 0;
                     for (int i = 0; i < 4; i++) //Check for players w/ same score
                     {

@@ -26,12 +26,15 @@ public class Timer : MonoBehaviour
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
     IEnumerator waitTime()
     {
-        int timeSet = maxTime;
+        float timeSet = maxTime;
         while (timeSet > 0)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
             //Debug.Log(timeSet);
-            timeSet--;
+            timeSet -= 0.1f;
+            timeSet *= 10;
+            timeSet = Mathf.Floor(timeSet);
+            timeSet /= 10;
             textDisplay.text = "Time: " + timeSet.ToString();
         }
 

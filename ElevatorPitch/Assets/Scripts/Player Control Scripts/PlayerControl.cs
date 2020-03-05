@@ -11,11 +11,12 @@ public class PlayerControl : MonoBehaviour
     Vector2 move;
     public float movementSpeed;
     private SpriteRenderer sr;
+    public GameObject pawn;
 
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-
+        
     }
 
 
@@ -43,18 +44,21 @@ public class PlayerControl : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (move != Vector2.zero)
+        if (pawn != null)
         {
-            transform.localPosition = transform.localPosition += 
-            new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
-            Rotation();
+            if (move != Vector2.zero)
+            {
+                pawn.transform.localPosition = pawn.transform.localPosition +=
+                new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
+                Rotation();
+            }
         }
     }
     void Rotation()
     {
         float angle = Mathf.Atan2(move.y, move.x) * 180/Mathf.PI;
         //Debug.Log(angle);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), interpolation * Time.deltaTime);
+        pawn.transform.rotation = Quaternion.Slerp(pawn.transform.rotation, Quaternion.Euler(0, 0, angle), interpolation * Time.deltaTime);
     }
 }
 
