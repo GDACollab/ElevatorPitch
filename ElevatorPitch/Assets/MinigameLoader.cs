@@ -27,9 +27,16 @@ public class MinigameLoader : MonoBehaviour
 
         //Add more instructions when adding new minigames
         int cubicleRush = firstMinigame;
+        int survive = 2;
         if(nextGame == cubicleRush + 0) //Cubicle rush
         {
             instructions = "Get to your cubicle!";
+        } else if (nextGame == survive)
+        {
+            instructions = "SURVIVE!";
+        } else if (nextGame == 3)
+        {
+            instructions = "DODGE!";
         }
         else //Unknown minigame
         {

@@ -13,7 +13,13 @@ EditorBuildSettings:
     guid: d33ee0a23589d0a47b783c606f0dbdef
   - enabled: 1
     path: Assets/Scenes/CubicleRush.unity
+    guid: 2d028247c8c952e41a2fcf4150cb8506
+  - enabled: 1
+    path: Assets/Scenes/Survive.unity
     guid: 45705135f19df2c4783fefecf89791cd
+  - enabled: 1
+    path: Assets/Scenes/DodgeGame.unity
+    guid: b0c390dcd6af25546919a9da982b13dd
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4d7b30b1a4c2f4a4a9e668f52346c591,
       type: 2}
