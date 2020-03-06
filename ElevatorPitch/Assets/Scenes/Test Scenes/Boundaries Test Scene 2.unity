@@ -833,6 +833,12 @@ PrefabInstance:
       propertyPath: m_JoinAction.m_UseReference
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 796623421156755146, guid: 2c59556c427eef447ba52632be262d37,
+        type: 3}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 3705504282659492510, guid: 9004179e5702ca04fad8929f9036c3da,
+        type: 3}
     - target: {fileID: 8088531314583555080, guid: 2c59556c427eef447ba52632be262d37,
         type: 3}
       propertyPath: m_LocalPosition.x
