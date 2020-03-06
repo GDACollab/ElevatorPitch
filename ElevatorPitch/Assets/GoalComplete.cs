@@ -14,10 +14,10 @@ public class GoalComplete : MonoBehaviour
     public int playerIndex;
     persistentData perisistentData;
     public AudioClip collide1;
-    AudioSource playerAudio;
+    SoundManager playerAudio;
     private void Start()
     {
-        playerAudio = GetComponent<AudioSource>();
+        playerAudio = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
         playerInput = GetComponent<PlayerInput>();
         setup = GetComponent<playerSetup>();
         playerIndex = setup.controllerIndex;
@@ -56,7 +56,8 @@ public class GoalComplete : MonoBehaviour
             isGoalComplete = false;
             perisistentData.complete[playerIndex] = false;
             perisistentData.setFinishTime(playerIndex);
-            playerAudio.PlayOneShot(collide1);
+            playerAudio.playSound(collide1);
+            //playerAudio.PlayOneShot(collide1);
             Destroy(gameObject);
         }
     }
