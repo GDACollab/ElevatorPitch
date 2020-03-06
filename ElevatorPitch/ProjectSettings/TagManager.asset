@@ -17,6 +17,7 @@ TagManager:
   - spawn1
   - spawn2
   - spawn3
+  - SoundManager
   layers:
   - Default
   - TransparentFX
