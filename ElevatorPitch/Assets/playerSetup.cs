@@ -11,10 +11,12 @@ public class playerSetup : MonoBehaviour
     private SpriteRenderer sr;
     public int controllerIndex = -1;
     public GoalComplete gc;
+    private GameObject spawnpoint;
     void Awake()
     {
         gc = GetComponent<GoalComplete>();
         playerInput = GetComponent<PlayerInput>();
+        
     }
      
     public void setup(int index)
@@ -23,6 +25,12 @@ public class playerSetup : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         sr.sprite = playerSprites[controllerIndex];
         gc.playerIndex = controllerIndex;
+        spawnpoint = GameObject.FindGameObjectWithTag("spawn" + index);
+        //if (spawnpoint != null)
+        //{
+            transform.position = spawnpoint.transform.position;
+            spawnpoint.SetActive(false);
+        //}
     }
 
     // Update is called once per frame

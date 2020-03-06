@@ -11,6 +11,12 @@ TagManager:
   - goal 2
   - goal 3
   - PCM
+  - GameMode
+  - Timer
+  - spawn0
+  - spawn1
+  - spawn2
+  - spawn3
   layers:
   - Default
   - TransparentFX
