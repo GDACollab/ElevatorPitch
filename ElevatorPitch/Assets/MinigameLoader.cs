@@ -9,14 +9,16 @@ using UnityEngine.UI;
 
 public class MinigameLoader : MonoBehaviour
 {
-    public int maxTime;
+    public float maxTime;
     public Text textDisplay = null;
     string instructions = "";
     public int firstMinigame = 1;
+    public GameObject[] text = new GameObject[4];
 
     // Start is called before the first frame update
     void Start()
     {
+        
         /* Chooses next game with a random number
          * Starts at 1 because 0 is the transition scene.
          * Important: If more non-minigame scenes are added, make sure to adjust the firstMinigame variable 
@@ -24,19 +26,26 @@ public class MinigameLoader : MonoBehaviour
          * */
         //Debug.Log(SceneManager.sceneCountInBuildSettings);
         int nextGame = Random.Range(firstMinigame, SceneManager.sceneCountInBuildSettings);
-
+        foreach(var x in text)
+        {
+            if(x != null) x.SetActive(false);
+        }
         //Add more instructions when adding new minigames
         int cubicleRush = firstMinigame;
         int survive = 2;
         if(nextGame == cubicleRush + 0) //Cubicle rush
         {
-            instructions = "Get to your cubicle!";
+            //instructions = "Get to your cubicle!";
+            text[nextGame].SetActive(true);
+
         } else if (nextGame == survive)
         {
-            instructions = "SURVIVE!";
+            //instructions = "SURVIVE!";
+            text[nextGame].SetActive(true);
         } else if (nextGame == 3)
         {
-            instructions = "DODGE!";
+            //instructions = "DODGE!";
+            text[nextGame].SetActive(true);
         }
         else //Unknown minigame
         {
@@ -49,13 +58,22 @@ public class MinigameLoader : MonoBehaviour
     IEnumerator waitTime(int scene)
     {
         //Debug.Log(scene);
-        yield return new WaitForSeconds(0.5f);
-        textDisplay.text = instructions; //Display instructions
-
+        yield return new WaitForSeconds(0.3f);
+        //textDisplay.text = instructions; //Display instructions
+        bool toggle = true;
         while (maxTime> 0)
         {
-            yield return new WaitForSeconds(1); //Wait a few seconds
-            maxTime--;
+            yield return new WaitForSeconds(0.3f); //Wait a few seconds
+            if (toggle)
+            {
+                text[scene].SetActive(false);
+                toggle = false;
+            } else
+            {
+                text[scene].SetActive(true);
+                toggle = true;
+            }
+            maxTime -= 0.3f;
         }
         //Debug.Log("Loading next scene");
         SceneManager.LoadScene(scene); //Load scene
