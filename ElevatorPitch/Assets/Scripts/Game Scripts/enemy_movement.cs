@@ -12,6 +12,7 @@ public class enemy_movement : MonoBehaviour
     public float endpos = 4.0f;
     public Vector3 start; 
     public bool moveleftright = false;
+    public bool moverightleft = false;
     public bool moveupdown = false;
     //private bool swit = false;
     // Start is called before the first frame update
@@ -25,42 +26,26 @@ public class enemy_movement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (moveleftright)
+        if (moverightleft)
         {
             if (start.x + endpos < this.gameObject.transform.position.x)
             {
-                /*if(swit==true)
-                {
-                    timer += Time.deltaTime;
-                    if (timer > waitTime)
-                    {
-                        timer = timer - waitTime;
-                        swit = false;
-                    }
-                }
-                else
-                {*/
-                    self.AddForce(-transform.right * thrust);
-                //}
-                
+                self.AddForce(-transform.right * thrust);
             }
             else if (start.x + endpos> this.gameObject.transform.position.x)
             {
-                /*if(swit==false)
-                {
-                    timer += Time.deltaTime;
-                    if(timer > waitTime)
-                    {
-                        timer = timer - waitTime;
-                        swit = true;
-                    }
-
-                }
-                else
-                {*/
-                    self.AddForce(transform.right * thrust);
-                //}
-                
+                self.AddForce(transform.right * thrust);
+            }
+        } 
+        else if (moveleftright)
+        {
+            if (start.x - endpos > this.gameObject.transform.position.x)
+            {
+                self.AddForce(transform.right * thrust);
+            }
+            else if (start.x - endpos < this.gameObject.transform.position.x)
+            {
+                self.AddForce(-transform.right * thrust);
             }
         }
         else if (moveupdown)

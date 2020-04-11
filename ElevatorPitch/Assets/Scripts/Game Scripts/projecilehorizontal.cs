@@ -23,7 +23,7 @@ public class projecilehorizontal : MonoBehaviour
         
         //float ran = ((GetComponent<SpriteRenderer>().sprite.bounds.size.y)/2)* Random.Range(-1, 1);
         Vector2 place = new Vector2(transform.position.x, transform.position.y+Random.Range(-rangesize/2, rangesize / 2));
-
+        thrust = Random.Range(300, 800);
         timer += Time.deltaTime;
         if (timer > waitTime)
         {
