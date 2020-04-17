@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool paused = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pauseText; //UI canvas that tells you the game is paused (attached to PersistantData, like this script)
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Check if game is paused
+        if(Time.timeScale == 0)
+        {
+            pauseText.SetActive(true);
+        }
+        else
+        {
+            pauseText.SetActive(false);
+        }
     }
 }
