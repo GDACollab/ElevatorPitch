@@ -13,12 +13,27 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer sr;
     public GameObject pawn;
 
+    public GameObject dataManager;
+
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
+        dataManager = GameObject.Find("PersistantDataManager");
         
     }
 
+    //Pause function
+    void OnPause()
+    {
+        if(Time.timeScale > 0)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
 
     void OnMovement(InputValue value)
     {
