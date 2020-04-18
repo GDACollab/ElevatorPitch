@@ -13,14 +13,13 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer sr;
     public GameObject pawn;
 
-    public GameObject dataManager;
     bool paused = false;
+    int index;
 
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        dataManager = GameObject.Find("PersistantDataManager");
-        
+        index = gameObject.GetComponent<PlayerInput>().playerIndex;
     }
 
     //Pause function
@@ -28,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(Time.timeScale > 0 && !paused)
         {
+            PauseMenu.playerPause = index + 1; //Tell pause menu which player paused
             Time.timeScale = 0f;
             paused = true;
         }

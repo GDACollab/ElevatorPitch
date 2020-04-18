@@ -590,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseText: {fileID: 83804184024028082}
+  textDisplay: {fileID: 1744053568173946173}
 --- !u!82 &657257646
 AudioSource:
   m_ObjectHideFlags: 0
