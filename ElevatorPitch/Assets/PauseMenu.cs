@@ -19,4 +19,10 @@ public class PauseMenu : MonoBehaviour
             pauseText.SetActive(false);
         }
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Button pressed");
+        Application.Quit();
+    }
 }

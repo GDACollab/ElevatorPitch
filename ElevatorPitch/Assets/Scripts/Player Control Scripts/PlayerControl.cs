@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject pawn;
 
     public GameObject dataManager;
+    bool paused = false;
 
     private void Start()
     {
@@ -25,13 +26,15 @@ public class PlayerControl : MonoBehaviour
     //Pause function
     void OnPause()
     {
-        if(Time.timeScale > 0)
+        if(Time.timeScale > 0 && !paused)
         {
             Time.timeScale = 0f;
+            paused = true;
         }
-        else
+        else if(paused) //Only the player who paused can unpause
         {
             Time.timeScale = 1f;
+            paused = false;
         }
     }
 
