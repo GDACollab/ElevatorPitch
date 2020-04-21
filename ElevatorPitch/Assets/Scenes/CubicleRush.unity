@@ -1670,14 +1670,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 800748429, guid: 1baf263f21b03d74bafbcd0daf717447, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 800748430, guid: 1baf263f21b03d74bafbcd0daf717447, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1555295685877531123, guid: 1baf263f21b03d74bafbcd0daf717447,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1733,55 +1725,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1555295685877531124, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: maxTime
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1555295685877531125, guid: 1baf263f21b03d74bafbcd0daf717447,
         type: 3}
       propertyPath: m_Name
       value: TimerObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295685877531125, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_TagString
-      value: Timer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295686882267943, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739743, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739809, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739809, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739809, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739809, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1555295687000739809, guid: 1baf263f21b03d74bafbcd0daf717447,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1baf263f21b03d74bafbcd0daf717447, type: 3}

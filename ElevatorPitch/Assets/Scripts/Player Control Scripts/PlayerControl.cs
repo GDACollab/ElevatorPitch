@@ -13,12 +13,30 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer sr;
     public GameObject pawn;
 
+    bool paused = false;
+    int index;
+
     private void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
-        
+        index = gameObject.GetComponent<PlayerInput>().playerIndex;
     }
 
+    //Pause function
+    void OnPause()
+    {
+        if(Time.timeScale > 0 && !paused)
+        {
+            PauseMenu.playerPause = index + 1; //Tell pause menu which player paused
+            Time.timeScale = 0f;
+            paused = true;
+        }
+        else if(paused) //Only the player who paused can unpause
+        {
+            Time.timeScale = 1f;
+            paused = false;
+        }
+    }
 
     void OnMovement(InputValue value)
     {

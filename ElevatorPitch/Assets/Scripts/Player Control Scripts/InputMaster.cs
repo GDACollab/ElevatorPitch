@@ -65,6 +65,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""3e4c058e-eb3a-413d-b29e-78beede43177"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -199,6 +207,28 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Rotation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8a2302c-6f9d-4171-91a6-856ef0f1b2d2"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4630f8f-b3a3-4fbe-baa7-727de5a68b15"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -213,6 +243,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_IngameControls_LeftButton = m_IngameControls.FindAction("LeftButton", throwIfNotFound: true);
         m_IngameControls_RightButton = m_IngameControls.FindAction("RightButton", throwIfNotFound: true);
         m_IngameControls_Rotation = m_IngameControls.FindAction("Rotation", throwIfNotFound: true);
+        m_IngameControls_Pause = m_IngameControls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,6 +299,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_IngameControls_LeftButton;
     private readonly InputAction m_IngameControls_RightButton;
     private readonly InputAction m_IngameControls_Rotation;
+    private readonly InputAction m_IngameControls_Pause;
     public struct IngameControlsActions
     {
         private @InputMaster m_Wrapper;
@@ -278,6 +310,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @LeftButton => m_Wrapper.m_IngameControls_LeftButton;
         public InputAction @RightButton => m_Wrapper.m_IngameControls_RightButton;
         public InputAction @Rotation => m_Wrapper.m_IngameControls_Rotation;
+        public InputAction @Pause => m_Wrapper.m_IngameControls_Pause;
         public InputActionMap Get() { return m_Wrapper.m_IngameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -305,6 +338,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Rotation.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRotation;
                 @Rotation.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRotation;
                 @Rotation.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRotation;
+                @Pause.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_IngameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -327,6 +363,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Rotation.started += instance.OnRotation;
                 @Rotation.performed += instance.OnRotation;
                 @Rotation.canceled += instance.OnRotation;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -339,5 +378,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnLeftButton(InputAction.CallbackContext context);
         void OnRightButton(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

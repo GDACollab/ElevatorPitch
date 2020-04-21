@@ -15,6 +15,9 @@ public class GoalComplete : MonoBehaviour
     persistentData perisistentData;
     public AudioClip collide1;
     SoundManager playerAudio;
+
+    public bool paused = false;
+
     private void Start()
     {
         playerAudio = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
@@ -61,5 +64,4 @@ public class GoalComplete : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }
