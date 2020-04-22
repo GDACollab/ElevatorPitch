@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4111472873617347229}
   - component: {fileID: 3103774672637158730}
   - component: {fileID: 6028574415939259712}
+  - component: {fileID: -2288409387435198956}
   m_Layer: 0
   m_Name: projec
   m_TagString: enemy
@@ -151,6 +152,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2288409387435198956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249267490242438470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdadcf35492595242a36e29f4c3ac6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 5
+  waitTime: 1
+  pausetime: 1
+  endpos: 2
+  start: {x: 0, y: 0, z: 0}
+  moveleftright: 0
+  moverightleft: 0
+  moveupdown: 1
 --- !u!1 &4967966048242591216
 GameObject:
   m_ObjectHideFlags: 0
