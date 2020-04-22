@@ -11,14 +11,13 @@ public class MinigameLoader : MonoBehaviour
 {
     public float maxTime;
     public Text textDisplay = null;
-    string instructions = "";
+    //string instructions = "";
     public int firstMinigame = 1;
     public GameObject[] text = new GameObject[4];
 
     // Start is called before the first frame update
     void Start()
     {
-
         /* Chooses next game with a random number
          * Starts at 1 because 0 is the transition scene.
          * Important: If more non-minigame scenes are added, make sure to adjust the firstMinigame variable 
@@ -32,8 +31,8 @@ public class MinigameLoader : MonoBehaviour
         }
         //Add more instructions when adding new minigames
         int cubicleRush = firstMinigame;
+        Debug.Log("nextGame: " + nextGame);
         int displayText = nextGame - cubicleRush + 1;
-
         if (displayText >= text.Length) //Minigame does not have a text object
         {
             displayText = 0;
@@ -60,7 +59,6 @@ public class MinigameLoader : MonoBehaviour
             instructions = "Get ready!";
         }
         */
-
         StartCoroutine(waitTime(nextGame, displayText));
     }
 

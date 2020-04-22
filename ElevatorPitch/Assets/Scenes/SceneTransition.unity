@@ -1313,27 +1313,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 3
   textDisplay: {fileID: 1803944033}
-  numOfExcludedScenes: 2
-  levels:
+  firstMinigame: 2
+  text:
+  - {fileID: 0}
   - {fileID: 603495690}
   - {fileID: 105154598}
   - {fileID: 532281335}
-  playerSprites:
-  - {fileID: 24601940}
-  - {fileID: 1068390289}
-  - {fileID: 1194104668}
-  - {fileID: 513613353}
-  playerSpeechBubbles:
-  - {fileID: 918151182}
-  - {fileID: 98087777}
-  - {fileID: 1105682457}
-  - {fileID: 1269249607}
-  characterNames:
-  - Blaze
-  - Gian
-  - Robyn
-  - Yeet
-  shakeModifier: 8
 --- !u!1 &1650954889
 GameObject:
   m_ObjectHideFlags: 0
