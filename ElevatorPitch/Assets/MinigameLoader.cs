@@ -14,6 +14,7 @@ public class MinigameLoader : MonoBehaviour
     //string instructions = "";
     public int firstMinigame = 1;
     public GameObject[] text = new GameObject[4];
+    persistentData persistentData;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,15 @@ public class MinigameLoader : MonoBehaviour
          * */
         //Debug.Log(SceneManager.sceneCountInBuildSettings);
         int nextGame = Random.Range(firstMinigame, SceneManager.sceneCountInBuildSettings);
+        persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
+        //If we find persistentData, use it to determine levelCount we have gone through
+        if (persistentData)
+        {
+            if (persistentData.levelsPlayed%3 == 0) //Check if its been 3 levels
+            {
+                nextGame = 1;
+            }
+        }
         foreach (var x in text)
         {
             if (x != null) x.SetActive(false);
@@ -37,6 +47,7 @@ public class MinigameLoader : MonoBehaviour
         {
             displayText = 0;
         }
+
         text[displayText].SetActive(true);
 
         /*
