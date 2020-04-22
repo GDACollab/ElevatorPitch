@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGoalComplete: 0
+  goalTag: 
+  playerIndex: 0
+  collide1: {fileID: 0}

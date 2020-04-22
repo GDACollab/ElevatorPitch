@@ -16,6 +16,7 @@ public class WinCondition : MonoBehaviour
 
     public void goalCompletionCheck(int gameMode)
     {
+        Debug.Log("Gamemode: " + gameMode);
         List<float> times = new List<float>(persistentData.finishTimes);
         int points = 3;
         switch (gameMode)
@@ -46,9 +47,9 @@ public class WinCondition : MonoBehaviour
                     times[times.IndexOf(max)] = -100;
                 }
                 printDebugScores();
-                return;
+                break;
             case 1: //Survive
-                while(Mathf.Max(times.ToArray()) != -1)
+                while (Mathf.Max(times.ToArray()) != -1)
                 {
                     float min = Mathf.Min(times.ToArray()); //Get biggest number(longest time), using min because the timer counts down
                     int count = 0;
@@ -67,10 +68,11 @@ public class WinCondition : MonoBehaviour
                     times[times.IndexOf(min)] = -1;
                 }
                 printDebugScores();
-                return;
+                break;
             default:
                 //default template
-                return;
+                Debug.Log("Gave no points");
+                break;
         }
     }
     /*public bool winCompletionCheck()

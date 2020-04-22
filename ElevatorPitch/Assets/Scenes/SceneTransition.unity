@@ -1313,9 +1313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 3
   textDisplay: {fileID: 1803944033}
-  firstMinigame: 1
-  text:
-  - {fileID: 0}
+  numOfExcludedScenes: 2
+  levels:
   - {fileID: 603495690}
   - {fileID: 105154598}
   - {fileID: 532281335}
@@ -1334,6 +1333,7 @@ MonoBehaviour:
   - Gian
   - Robyn
   - Yeet
+  shakeModifier: 8
 --- !u!1 &1650954889
 GameObject:
   m_ObjectHideFlags: 0

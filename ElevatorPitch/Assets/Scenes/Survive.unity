@@ -1120,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 394910101028903245, guid: 32689b9ef82888c4aabc23ed87702417,
         type: 3}
       propertyPath: gameModeTemplate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3760166836561800230, guid: 32689b9ef82888c4aabc23ed87702417,
         type: 3}
