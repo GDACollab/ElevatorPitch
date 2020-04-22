@@ -53,7 +53,6 @@ public class Timer : MonoBehaviour
             if (showTimer)
             {
                 textDisplay.text = "Time: " + timeSet.ToString();
-                Debug.Log("Before goal completion check");
             }
         }
         
