@@ -8,9 +8,12 @@ public class Timer : MonoBehaviour
     public Text textDisplay = null;
     // Start is called before the first frame update
     public int maxTime = 10;
+    public bool showTimer = true;
     private GameObject persistentDataObj;
     private persistentData persistentDataScript;
+    private GameObject gameMode;
     private WinCondition winCondition;
+    //private GameObject winCondition;
 
     //Animation of elevator doors
     public Animator transition;
@@ -19,8 +22,20 @@ public class Timer : MonoBehaviour
     {
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
         persistentDataScript = persistentDataObj.GetComponent<persistentData>();
-        winCondition = persistentDataObj.GetComponent<WinCondition>();
-        textDisplay.text = "Time: " + maxTime.ToString();
+        gameMode = GameObject.FindGameObjectWithTag("GameMode");
+        if (gameMode)
+        {
+            Debug.Log("Found GameMode: " + gameMode.GetComponent<WinCondition>().gameModeTemplate);
+        }
+        
+        //winCondition = persistentDataObj.GetComponent<WinCondition>();
+        winCondition = gameMode.GetComponent<WinCondition>();
+        textDisplay.text = "";
+        if (showTimer)
+        {
+            textDisplay.text = "Time: " + maxTime.ToString();
+        }
+        
         StartCoroutine(waitTime());
     }
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
@@ -35,10 +50,14 @@ public class Timer : MonoBehaviour
             timeSet *= 10;
             timeSet = Mathf.Floor(timeSet);
             timeSet /= 10;
-            textDisplay.text = "Time: " + timeSet.ToString();
+            if (showTimer)
+            {
+                textDisplay.text = "Time: " + timeSet.ToString();
+            }
         }
-
+        
         winCondition.goalCompletionCheck(winCondition.gameModeTemplate);
+        //winCondition.GetComponent<WinCondition>().goalCompletionCheck(winCondition.GetComponent<WinCondition>().gameModeTemplate);
 
 
         //Added by Santiago. Does the elevator door animation before loading next level

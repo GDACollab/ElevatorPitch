@@ -57,6 +57,7 @@ public class GoalComplete : MonoBehaviour
         if(collision.transform.tag == "enemy")
         {   
             isGoalComplete = false;
+            Debug.Log("Hit by enemy");
             perisistentData.complete[playerIndex] = false;
             perisistentData.setFinishTime(playerIndex);
             playerAudio.playSound(collide1);

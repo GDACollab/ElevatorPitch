@@ -521,6 +521,11 @@ PrefabInstance:
       propertyPath: m_MaxPlayerCount
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6339411534588949495, guid: 2c59556c427eef447ba52632be262d37,
+        type: 3}
+      propertyPath: gameModeTemplate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8088531314583555080, guid: 2c59556c427eef447ba52632be262d37,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -729,6 +734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneGameMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 394910101028903245, guid: 32689b9ef82888c4aabc23ed87702417,
+        type: 3}
+      propertyPath: gameModeTemplate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3760166836561800230, guid: 32689b9ef82888c4aabc23ed87702417,
         type: 3}
