@@ -9,19 +9,30 @@ public class PauseMenu : MonoBehaviour
     public static int playerPause;
     public Text textDisplay = null;
 
+    public Image[] buttons = new Image[5];
+
+    public Animator doors;
+
+    public static int cursorPosition; //Controls which option is being hovered over
+
     // Update is called once per frame
     void Update()
     {
         //Check if game is paused
         if(Time.timeScale == 0)
         {
+            doors.SetBool("Close Doors", true);
             pauseText.SetActive(true);
             textDisplay.text = "P" + playerPause + " Pause";
         }
         else
         {
+            doors.SetBool("Close Doors", false);
             pauseText.SetActive(false);
         }
+
+        //Check for cursor position
+        
     }
 
     public void QuitGame()
