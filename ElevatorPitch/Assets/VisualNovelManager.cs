@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Written by Jacob Compton
+//jrcompto@ucsc.edu
+
 public class VisualNovelManager : MonoBehaviour
 {
 
