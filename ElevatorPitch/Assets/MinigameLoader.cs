@@ -14,6 +14,7 @@ public class MinigameLoader : MonoBehaviour
     //string instructions = "";
     public int firstMinigame = 1;
     public GameObject[] text = new GameObject[4];
+    public int levelsTillQuips = 3;
     persistentData persistentData;
 
     // Start is called before the first frame update
@@ -30,9 +31,10 @@ public class MinigameLoader : MonoBehaviour
         //If we find persistentData, use it to determine levelCount we have gone through
         if (persistentData)
         {
-            if (persistentData.levelsPlayed%3 == 0) //Check if its been 3 levels
+            if (persistentData.levelsPlayed%levelsTillQuips == 0) //Check if its been 3 levels
             {
                 nextGame = 1;
+                maxTime = 1;
             }
         }
         foreach (var x in text)

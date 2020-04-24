@@ -1355,6 +1355,7 @@ MonoBehaviour:
   - {fileID: 603495690}
   - {fileID: 105154598}
   - {fileID: 532281335}
+  levelsTillQuips: 3
 --- !u!1 &1650954889
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,8 +18,11 @@ TagManager:
   - spawn2
   - spawn3
   - SoundManager
-  - vnNameText
   - vnCharacterSpeechText
+  - rightVnNameText
+  - leftVnNameText
+  - leftCharacterNameBox
+  - rightCharacterNameBox
   layers:
   - Default
   - TransparentFX
