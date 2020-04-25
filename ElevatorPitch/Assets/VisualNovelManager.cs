@@ -93,8 +93,8 @@ public class VisualNovelManager : MonoBehaviour
             if (losing == 1) //and Gian in last
             {
                 string[] blazeToGianQuips = {
-                "Green is the color of envy Giang. It suits you.",
-                "You know what's green? plants. You know what they're good at? staying in their place.",
+                "Green is the color of Envy, Giang. It suits you.",
+                "You know what's green? Plants. You know what they're good at? Staying in their place.",
                 };
                 int index = Random.Range(0, blazeToGianQuips.Length);
                 quips[0] = blazeToGianQuips[index];
@@ -102,7 +102,7 @@ public class VisualNovelManager : MonoBehaviour
             else if (losing == 2) //and Robyn in last
             {
                 string[] blazeToRobynQuips = {
-                "Robins a bird right? Even if you could fly, you'd still be beneath me.",
+                "Robin is a bird right? Even if you could fly, you'd still be beneath me.",
                 "I didn't know robins were spineless birds.",
                 };
                 int index = Random.Range(0, blazeToRobynQuips.Length);
@@ -194,7 +194,7 @@ public class VisualNovelManager : MonoBehaviour
             else if (losing == 2) //and Robyn in last
             {
                 string[] YeetToRobynQuips = {
-                "Robins a bird right? You got broken wings? where's your speed?",
+                "Robins a bird right? You got broken wings? Where's your speed?",
                 };
                 int index = Random.Range(0, YeetToRobynQuips.Length);
                 quips[0] = YeetToRobynQuips[index];

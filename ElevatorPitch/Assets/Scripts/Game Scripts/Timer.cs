@@ -23,12 +23,7 @@ public class Timer : MonoBehaviour
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
         persistentDataScript = persistentDataObj.GetComponent<persistentData>();
         gameMode = GameObject.FindGameObjectWithTag("GameMode");
-        if (gameMode)
-        {
-            Debug.Log("Found GameMode: " + gameMode.GetComponent<WinCondition>().gameModeTemplate);
-        }
         
-        //winCondition = persistentDataObj.GetComponent<WinCondition>();
         winCondition = gameMode.GetComponent<WinCondition>();
         textDisplay.text = "";
         if (showTimer)

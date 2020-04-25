@@ -690,6 +690,11 @@ PrefabInstance:
       propertyPath: m_MaxPlayerCount
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6339411534588949495, guid: 2c59556c427eef447ba52632be262d37,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8088531314583555080, guid: 2c59556c427eef447ba52632be262d37,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1675,6 +1680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 800748430, guid: 1baf263f21b03d74bafbcd0daf717447, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1555295685877531123, guid: 1baf263f21b03d74bafbcd0daf717447,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,6 +1743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TimerObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555295686882267943, guid: 1baf263f21b03d74bafbcd0daf717447,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1baf263f21b03d74bafbcd0daf717447, type: 3}

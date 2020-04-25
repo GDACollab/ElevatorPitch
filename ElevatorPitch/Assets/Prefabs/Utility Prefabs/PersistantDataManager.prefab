@@ -468,7 +468,6 @@ GameObject:
   - component: {fileID: 8088531314583555080}
   - component: {fileID: 8088531314583555087}
   - component: {fileID: 796623421156755146}
-  - component: {fileID: 6339411534588949495}
   - component: {fileID: 3796963753994755140}
   - component: {fileID: 657257646}
   m_Layer: 0
@@ -512,6 +511,7 @@ MonoBehaviour:
   - 0
   - 0
   complete: 00000000
+  levelsPlayed: 0
 --- !u!114 &796623421156755146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,19 +564,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &6339411534588949495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088531314583555081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b081db3ffe51c4f9a05cf299f85082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameModeTemplate: 0
 --- !u!114 &3796963753994755140
 MonoBehaviour:
   m_ObjectHideFlags: 0

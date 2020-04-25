@@ -16,7 +16,6 @@ public class WinCondition : MonoBehaviour
 
     public void goalCompletionCheck(int gameMode)
     {
-        Debug.Log("Gamemode: " + gameMode);
         List<float> times = new List<float>(persistentData.finishTimes);
         int points = 3;
         switch (gameMode)
@@ -49,10 +48,22 @@ public class WinCondition : MonoBehaviour
                 printDebugScores();
                 break;
             case 1: //Survive
-                while (Mathf.Max(times.ToArray()) != -1)
+                while (true)
                 {
-                    float min = Mathf.Min(times.ToArray()); //Get biggest number(longest time), using min because the timer counts down
-                    int count = 0;
+                    float min = 100; //Min set to impossible value for checks
+                    for(int j = 0; j < 4; j++) //Loop through times and find lowest one that isn't -1
+                    {
+                        if(times.ToArray()[j] < min && times.ToArray()[j] != -1)
+                        {
+                            min = times.ToArray()[j];
+                        }
+                    }
+                    if(min == 100) //If all values are -1, then min will stay 100, so end because all times are accounted for
+                    {
+                        printDebugScores();
+                        break;
+                    }
+                    int count = 0; //Count for checking if people have the same finish times
                     for (int i = 0; i < 4; i++) //Check for players w/ same score
                     {
                         if (min == times[i])
@@ -65,9 +76,8 @@ public class WinCondition : MonoBehaviour
                     {
                         points--;
                     }
-                    times[times.IndexOf(min)] = -1;
+                    times[times.IndexOf(min)] = -1; //Set this person's time to -1, signifying that they've been checked off
                 }
-                printDebugScores();
                 break;
             default:
                 //default template
@@ -75,23 +85,6 @@ public class WinCondition : MonoBehaviour
                 break;
         }
     }
-    /*public bool winCompletionCheck()
-    {
-        int goalsCompleted = 0;
-        if (player1.IsGoalComplete)
-            goalsCompleted++;
-        if (player2.IsGoalComplete)
-            goalsCompleted++;
-        if (player3.IsGoalComplete)
-            goalsCompleted++;
-        if (player4.IsGoalComplete)
-            goalsCompleted++;
-        if (goalsCompleted > 2)
-        {
-            return true;
-        }
-        return false;
-    }*/
 
     public void printDebugScores()
     {
@@ -101,9 +94,4 @@ public class WinCondition : MonoBehaviour
             Debug.Log("Player " + i + "'s Score: " + persistentData.scores[i]);
         }
     }
-
-    /*public void template0()
-    {
-        ///This is where we determine which players have completed the goal for the first game template
-    }*/
 }
