@@ -14,9 +14,11 @@ public class persistentData : MonoBehaviour
     float timerStartPoint;
     private AudioSource audioSource;
     //private Timer timer;
+    public int levelsPlayed = 0;
 
     void Start()
     {
+        //gamesPlayed = 0;
         //floorNum = 0;
         scores[0] = 0;
         scores[1] = 0;
@@ -26,8 +28,6 @@ public class persistentData : MonoBehaviour
         //finishTimes[1] = 0;
         //finishTimes[2] = 0;
         //finishTimes[3] = 0;
-        
-
     }
 
    
@@ -85,6 +85,7 @@ public class persistentData : MonoBehaviour
 
     public void nextLevel()
     {
+        levelsPlayed++;
         Debug.Log("NEXT LEVEL");
         complete[0] = false;
         complete[1] = false;

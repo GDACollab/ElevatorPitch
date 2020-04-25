@@ -21,8 +21,10 @@ public class CharacterPrefabController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-     spawnPlayer(new Vector3(0, 0, 0));
-
+        if(!(scene.name == "quips"))
+        {
+            spawnPlayer(new Vector3(0, 0, 0));
+        }
     }
 
     public void spawnPlayer(Vector3 pos)
