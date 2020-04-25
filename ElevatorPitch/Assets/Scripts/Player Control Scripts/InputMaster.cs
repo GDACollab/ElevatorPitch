@@ -73,6 +73,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LeftFlick"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd129f55-dd9e-4974-97e4-b7b0ab7574e6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.2)""
+                },
+                {
+                    ""name"": ""RightFlick"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1543d3a-dfcc-4b35-97b2-8c2074547c56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap""
                 }
             ],
             ""bindings"": [
@@ -251,6 +267,72 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7e51a1e-0f9b-4027-b9e2-c2c282e344a3"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89894dfc-0744-4387-bd48-94bfa544898b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56778148-7d95-4dfb-8789-401e6d9bf17a"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caed7d80-3c71-4867-9be9-ed4a11fd1a21"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""41ba3c7a-d575-4a12-88b2-ac4fd3d3e7ad"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d7e375a-5a73-4fb5-8ea0-33eb3982bea1"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -266,6 +348,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_IngameControls_RightButton = m_IngameControls.FindAction("RightButton", throwIfNotFound: true);
         m_IngameControls_Rotation = m_IngameControls.FindAction("Rotation", throwIfNotFound: true);
         m_IngameControls_Pause = m_IngameControls.FindAction("Pause", throwIfNotFound: true);
+        m_IngameControls_LeftFlick = m_IngameControls.FindAction("LeftFlick", throwIfNotFound: true);
+        m_IngameControls_RightFlick = m_IngameControls.FindAction("RightFlick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -322,6 +406,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_IngameControls_RightButton;
     private readonly InputAction m_IngameControls_Rotation;
     private readonly InputAction m_IngameControls_Pause;
+    private readonly InputAction m_IngameControls_LeftFlick;
+    private readonly InputAction m_IngameControls_RightFlick;
     public struct IngameControlsActions
     {
         private @InputMaster m_Wrapper;
@@ -333,6 +419,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @RightButton => m_Wrapper.m_IngameControls_RightButton;
         public InputAction @Rotation => m_Wrapper.m_IngameControls_Rotation;
         public InputAction @Pause => m_Wrapper.m_IngameControls_Pause;
+        public InputAction @LeftFlick => m_Wrapper.m_IngameControls_LeftFlick;
+        public InputAction @RightFlick => m_Wrapper.m_IngameControls_RightFlick;
         public InputActionMap Get() { return m_Wrapper.m_IngameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -363,6 +451,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnPause;
+                @LeftFlick.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnLeftFlick;
+                @LeftFlick.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnLeftFlick;
+                @LeftFlick.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnLeftFlick;
+                @RightFlick.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
+                @RightFlick.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
+                @RightFlick.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
             }
             m_Wrapper.m_IngameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -388,6 +482,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @LeftFlick.started += instance.OnLeftFlick;
+                @LeftFlick.performed += instance.OnLeftFlick;
+                @LeftFlick.canceled += instance.OnLeftFlick;
+                @RightFlick.started += instance.OnRightFlick;
+                @RightFlick.performed += instance.OnRightFlick;
+                @RightFlick.canceled += instance.OnRightFlick;
             }
         }
     }
@@ -401,5 +501,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnRightButton(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLeftFlick(InputAction.CallbackContext context);
+        void OnRightFlick(InputAction.CallbackContext context);
     }
 }

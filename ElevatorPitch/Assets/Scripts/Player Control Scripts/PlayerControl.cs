@@ -39,12 +39,33 @@ public class PlayerControl : MonoBehaviour
             paused = false;
         }
     }
+    void OnLeftFlick()
+    {
+        if (paused)
+        {
+            PauseMenu.cursorPosition -= 1; //Move cursor left
+            if (PauseMenu.cursorPosition < 0)
+            {
+                PauseMenu.cursorPosition = 0;
+            }
+        }
+    }
+    void OnRightFlick()
+    {
+        if (paused)
+        {
+            PauseMenu.cursorPosition += 1; //Move cursor right
+            if (PauseMenu.cursorPosition > 2)
+            {
+                PauseMenu.cursorPosition = 2;
+            }
+        }
+    }
 
     void OnMovement(InputValue value)
     {
         move = value.Get<Vector2>();
         //Debug.Log(move);
-
     }
     void OnUpButton()
     {
@@ -57,26 +78,11 @@ public class PlayerControl : MonoBehaviour
     void OnLeftButton()
     {
         Debug.Log("Left Button Pressed");
-        if(paused)
-        {
-            PauseMenu.cursorPosition -= 1; //Move cursor left
-            if(PauseMenu.cursorPosition < 0)
-            {
-                PauseMenu.cursorPosition = 0;
-            }
-        }
+        
     }
     void OnRightButton()
     {
         Debug.Log("Right Button Pressed");
-        if (paused)
-        {
-            PauseMenu.cursorPosition += 1; //Move cursor left
-            if (PauseMenu.cursorPosition > 2)
-            {
-                PauseMenu.cursorPosition = 2;
-            }
-        }
     }
     void FixedUpdate()
     {
