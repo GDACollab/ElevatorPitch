@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour
             PauseMenu.playerPause = index + 1; //Tell pause menu which player paused
             Time.timeScale = 0f;
             paused = true;
+            PauseMenu.justPaused = true;
         }
         else if(paused) //Only the player who paused can unpause
         {
@@ -55,10 +57,26 @@ public class PlayerControl : MonoBehaviour
     void OnLeftButton()
     {
         Debug.Log("Left Button Pressed");
+        if(paused)
+        {
+            PauseMenu.cursorPosition -= 1; //Move cursor left
+            if(PauseMenu.cursorPosition < 0)
+            {
+                PauseMenu.cursorPosition = 0;
+            }
+        }
     }
     void OnRightButton()
     {
         Debug.Log("Right Button Pressed");
+        if (paused)
+        {
+            PauseMenu.cursorPosition += 1; //Move cursor left
+            if (PauseMenu.cursorPosition > 2)
+            {
+                PauseMenu.cursorPosition = 2;
+            }
+        }
     }
     void FixedUpdate()
     {

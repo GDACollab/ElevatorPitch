@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 8263714506803842361}
   - component: {fileID: 2559752262507169652}
   m_Layer: 8
-  m_Name: Quit Hover
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,11 +1337,11 @@ MonoBehaviour:
   pauseText: {fileID: 83804184024028082}
   textDisplay: {fileID: 1744053568173946173}
   buttons:
-  - {fileID: 8493420213544433146}
-  - {fileID: 5401908270063431227}
-  - {fileID: 5497698290350799773}
-  - {fileID: 6959895405242039325}
-  - {fileID: 1606038534992505310}
+  - {fileID: 3291734881487890110}
+  - {fileID: 4057822663446696935}
+  - {fileID: 5092077070987710511}
+  - {fileID: 6935194083853965217}
+  - {fileID: 8450621556338388214}
   doors: {fileID: 3891020920370878296}
 --- !u!82 &657257646
 AudioSource:
