@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour
             PauseMenu.playerPause = index + 1; //Tell pause menu which player paused
             Time.timeScale = 0f;
             paused = true;
+            PauseMenu.justPaused = true;
         }
         else if(paused) //Only the player who paused can unpause
         {
@@ -37,12 +39,33 @@ public class PlayerControl : MonoBehaviour
             paused = false;
         }
     }
+    void OnLeftFlick()
+    {
+        if (paused)
+        {
+            PauseMenu.cursorPosition -= 1; //Move cursor left
+            if (PauseMenu.cursorPosition < 0)
+            {
+                PauseMenu.cursorPosition = 0;
+            }
+        }
+    }
+    void OnRightFlick()
+    {
+        if (paused)
+        {
+            PauseMenu.cursorPosition += 1; //Move cursor right
+            if (PauseMenu.cursorPosition > 2)
+            {
+                PauseMenu.cursorPosition = 2;
+            }
+        }
+    }
 
     void OnMovement(InputValue value)
     {
         move = value.Get<Vector2>();
         //Debug.Log(move);
-
     }
     void OnUpButton()
     {
@@ -51,10 +74,35 @@ public class PlayerControl : MonoBehaviour
     void OnDownButton()
     {
         Debug.Log("South Button Pressed");
+        if(PauseMenu.cursorPosition == 0)
+        {
+            Time.timeScale = 1f;
+            paused = false;
+        }
+        else if(PauseMenu.cursorPosition == 1)
+        {
+            //Mute, could update with full volume control later
+            if(PauseMenu.muted)
+            {
+                AudioListener.volume = 1.0f; //Might not work for all audio sources
+                PauseMenu.muted = false;
+            }
+            else
+            {
+                AudioListener.volume = 0.0f;
+                PauseMenu.muted = true;
+            }
+        }
+        else if(PauseMenu.cursorPosition == 2)
+        {
+            Debug.Log("Exit");
+            //Go to start menu screen
+        }
     }
     void OnLeftButton()
     {
         Debug.Log("Left Button Pressed");
+        
     }
     void OnRightButton()
     {

@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
 
         //Added by Santiago. Does the elevator door animation before loading next level
         transition.SetTrigger("Close Doors");
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.8f);
 
         persistentDataScript.nextLevel();
     }

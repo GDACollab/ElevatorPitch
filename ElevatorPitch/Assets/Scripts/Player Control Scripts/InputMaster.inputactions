@@ -60,6 +60,22 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "LeftFlick",
+                    "type": "Button",
+                    "id": "dd129f55-dd9e-4974-97e4-b7b0ab7574e6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.2)"
+                },
+                {
+                    "name": "RightFlick",
+                    "type": "Button",
+                    "id": "c1543d3a-dfcc-4b35-97b2-8c2074547c56",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Tap"
                 }
             ],
             "bindings": [
@@ -164,6 +180,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f2b45efc-2e75-4985-9fa5-817e9b4ddd88",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a2a4addc-3af4-4c55-85f7-5ef13de2252d",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -175,8 +202,30 @@
                 },
                 {
                     "name": "",
+                    "id": "9fe6fa28-9382-4e57-8d55-573af46201b4",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ba9d7eb9-cdaf-4640-a2aa-17a199e29820",
                     "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e73f70ac-99d8-4229-8f8e-35ca9c9e364e",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -214,6 +263,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7e51a1e-0f9b-4027-b9e2-c2c282e344a3",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftFlick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89894dfc-0744-4387-bd48-94bfa544898b",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftFlick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56778148-7d95-4dfb-8789-401e6d9bf17a",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftFlick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "caed7d80-3c71-4867-9be9-ed4a11fd1a21",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightFlick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41ba3c7a-d575-4a12-88b2-ac4fd3d3e7ad",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightFlick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d7e375a-5a73-4fb5-8ea0-33eb3982bea1",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightFlick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

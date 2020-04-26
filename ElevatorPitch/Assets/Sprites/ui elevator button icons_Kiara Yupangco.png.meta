@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 5133abd15a25d78439022ddaf5b93b30
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4110887487374455607
+    second: ui elevator button icons_Kiara Yupangco_0
+  - first:
+      213: -3015133380556491648
+    second: ui elevator button icons_Kiara Yupangco_1
+  - first:
+      213: -7568108614216467170
+    second: ui elevator button icons_Kiara Yupangco_2
+  - first:
+      213: -4568693215611951806
+    second: ui elevator button icons_Kiara Yupangco_3
+  - first:
+      213: 7992693680498219717
+    second: ui elevator button icons_Kiara Yupangco_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +85,126 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ui elevator button icons_Kiara Yupangco_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 498
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc191b1bb0073745b1f20548f70e559
+      internalID: -4110887487374455607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui elevator button icons_Kiara Yupangco_1
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 498
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1bc9c1eacc3504ba70ebe3c7c6a784
+      internalID: -3015133380556491648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui elevator button icons_Kiara Yupangco_2
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 292
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8cbe8c46744124496544c7cba9e385
+      internalID: -7568108614216467170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui elevator button icons_Kiara Yupangco_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 98
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26717a0d40634af41ac0272ac26c4ed3
+      internalID: -4568693215611951806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui elevator button icons_Kiara Yupangco_4
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 98
+        width: 299
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed679651a25bb974c8acad3c5cef1c25
+      internalID: 7992693680498219717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
