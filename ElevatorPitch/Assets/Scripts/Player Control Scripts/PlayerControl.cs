@@ -96,7 +96,7 @@ public class PlayerControl : MonoBehaviour
         else if(PauseMenu.cursorPosition == 2)
         {
             Debug.Log("Exit");
-            //Go to start menu screen
+            Application.Quit(); //Maybe replace this with going to the start screen?
         }
     }
     void OnLeftButton()
