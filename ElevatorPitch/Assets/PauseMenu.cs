@@ -8,13 +8,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseText; //UI canvas that tells you the game is paused (attached to PersistantData, like this script)
     public static int playerPause;
     public Text textDisplay = null;
+    public Text buttonFunction = null;
 
     public GameObject[] buttons = new GameObject[5];
 
     //public Animator doors;
 
     public static int cursorPosition; //Controls which option is being hovered over
-    bool muted = false;
+    public static bool muted = false;
     public static bool justPaused = false;
 
     // Update is called once per frame
@@ -51,6 +52,7 @@ public class PauseMenu : MonoBehaviour
                 buttons[i].SetActive(false);
             }
             buttons[0].SetActive(true);
+            buttonFunction.text = "Resume";
         }
         else if (cursorPosition == 1 && !muted) //Highlight sound
         {
@@ -59,6 +61,7 @@ public class PauseMenu : MonoBehaviour
                 buttons[i].SetActive(false);
             }
             buttons[1].SetActive(true);
+            buttonFunction.text = "Mute Audio";
         }
         else if (cursorPosition == 1 && muted) //Highlight mute
         {
@@ -66,7 +69,8 @@ public class PauseMenu : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
-            buttons[4].SetActive(true);
+            buttons[3].SetActive(true);
+            buttonFunction.text = "Mute Audio";
         }
         else if (cursorPosition == 2) //Highlight exit
         {
@@ -75,6 +79,7 @@ public class PauseMenu : MonoBehaviour
                 buttons[i].SetActive(false);
             }
             buttons[2].SetActive(true);
+            buttonFunction.text = "Quit Game";
         }
 
         if(muted)
@@ -87,7 +92,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void pause()
+    public static void select()
     {
         
     }
@@ -95,6 +100,6 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Button pressed");
-        Application.Quit();
+        //Application.Quit();
     }
 }

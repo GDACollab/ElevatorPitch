@@ -193,6 +193,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""f2b45efc-2e75-4985-9fa5-817e9b4ddd88"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a2a4addc-3af4-4c55-85f7-5ef13de2252d"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",

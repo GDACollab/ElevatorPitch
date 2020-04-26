@@ -74,6 +74,30 @@ public class PlayerControl : MonoBehaviour
     void OnDownButton()
     {
         Debug.Log("South Button Pressed");
+        if(PauseMenu.cursorPosition == 0)
+        {
+            Time.timeScale = 1f;
+            paused = false;
+        }
+        else if(PauseMenu.cursorPosition == 1)
+        {
+            //Mute, could update with full volume control later
+            if(PauseMenu.muted)
+            {
+                AudioListener.volume = 1.0f; //Might not work for all audio sources
+                PauseMenu.muted = false;
+            }
+            else
+            {
+                AudioListener.volume = 0.0f;
+                PauseMenu.muted = true;
+            }
+        }
+        else if(PauseMenu.cursorPosition == 2)
+        {
+            Debug.Log("Exit");
+            //Go to start menu screen
+        }
     }
     void OnLeftButton()
     {
