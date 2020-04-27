@@ -92,7 +92,7 @@ public class persistentData : MonoBehaviour
         complete[2] = false;
         complete[3] = false;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 

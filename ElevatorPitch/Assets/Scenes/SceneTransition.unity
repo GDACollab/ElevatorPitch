@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTime: 3
   textDisplay: {fileID: 1803944033}
-  firstMinigame: 2
+  firstMinigame: 3
   text:
   - {fileID: 103651990}
   - {fileID: 603495690}

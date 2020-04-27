@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -23,16 +24,19 @@ public class Timer : MonoBehaviour
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
         persistentDataScript = persistentDataObj.GetComponent<persistentData>();
         gameMode = GameObject.FindGameObjectWithTag("GameMode");
-        
+
         winCondition = gameMode.GetComponent<WinCondition>();
         textDisplay.text = "";
         if (showTimer)
         {
             textDisplay.text = "Time: " + maxTime.ToString();
         }
-        
-        StartCoroutine(waitTime());
+        if(!(SceneManager.GetActiveScene().name == "Start")){
+            StartCoroutine(waitTime());
+        }
     }
+
+
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
     IEnumerator waitTime()
     {
@@ -50,7 +54,7 @@ public class Timer : MonoBehaviour
                 textDisplay.text = "Time: " + timeSet.ToString();
             }
         }
-        
+
         winCondition.goalCompletionCheck(winCondition.gameModeTemplate);
         //winCondition.GetComponent<WinCondition>().goalCompletionCheck(winCondition.GetComponent<WinCondition>().gameModeTemplate);
 
@@ -59,6 +63,18 @@ public class Timer : MonoBehaviour
         transition.SetTrigger("Close Doors");
         yield return new WaitForSeconds(0.8f);
 
+        persistentDataScript.nextLevel();
+    }
+
+
+    public void doTransition(){
+        StartCoroutine(closeDoors());
+    }
+
+    IEnumerator closeDoors(){
+        Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        transition.SetTrigger("Close Doors");
+        yield return new WaitForSeconds(0.8f);
         persistentDataScript.nextLevel();
     }
 }
