@@ -14,7 +14,7 @@ public class loadScene : MonoBehaviour
         //for(int i = 0; i < prefabManagers.Length; i++)
         //{
             playerControl = prefabManagers.GetComponent<CharacterPrefabController>();
-            playerControl.spawnPlayer(new Vector3(-1, count, 0));
+            playerControl.spawnPlayer(new Vector3(-1, count, 0), 0);
             count += 1;
         //}
     }

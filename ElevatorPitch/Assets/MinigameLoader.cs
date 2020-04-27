@@ -33,7 +33,7 @@ public class MinigameLoader : MonoBehaviour
         {
             if (persistentData.levelsPlayed%levelsTillQuips == 0) //Check if its been 3 levels
             {
-                nextGame = 1;
+                nextGame = 2;
                 maxTime = 1;
             }
         }

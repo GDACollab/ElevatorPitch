@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -30,9 +31,12 @@ public class Timer : MonoBehaviour
         {
             textDisplay.text = "Time: " + maxTime.ToString();
         }
-        
-        StartCoroutine(waitTime());
+        if(!(SceneManager.GetActiveScene().name == "Start")){
+            StartCoroutine(waitTime());
+        }
     }
+
+
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
     IEnumerator waitTime()
     {
@@ -58,7 +62,18 @@ public class Timer : MonoBehaviour
         //Added by Santiago. Does the elevator door animation before loading next level
         transition.SetTrigger("Close Doors");
         yield return new WaitForSeconds(1.0f);
-
         persistentDataScript.nextLevel();
     }
+
+
+    public void doTransition(){
+        StartCoroutine(closeDoors());
+    }
+
+    IEnumerator closeDoors(){
+        Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        transition.SetTrigger("Close Doors");
+        yield return new WaitForSeconds(1.0f);
+        persistentDataScript.nextLevel();
+    } 
 }
