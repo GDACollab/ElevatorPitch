@@ -80,7 +80,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""dd129f55-dd9e-4974-97e4-b7b0ab7574e6"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Tap(duration=0.2)""
+                    ""interactions"": ""Tap(duration=0.4)""
                 },
                 {
                     ""name"": ""RightFlick"",
@@ -88,7 +88,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""id"": ""c1543d3a-dfcc-4b35-97b2-8c2074547c56"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Tap""
+                    ""interactions"": ""Tap(duration=0.4)""
                 }
             ],
             ""bindings"": [
