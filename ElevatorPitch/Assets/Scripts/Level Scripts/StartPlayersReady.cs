@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartPlayersReady : MonoBehaviour
 {
+    public int playersToStart = 4;
     GameObject Timer;
     private void Start()
     {
@@ -26,7 +27,7 @@ public class StartPlayersReady : MonoBehaviour
 
     private void Update()
     {
-        if (playerCount == 2)
+        if (playerCount == playersToStart)
         {
             Debug.Log("CALLING DOTRANSITION");
             Timer.GetComponent<Timer>().doTransition();
