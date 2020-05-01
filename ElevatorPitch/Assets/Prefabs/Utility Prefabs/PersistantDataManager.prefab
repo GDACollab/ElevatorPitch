@@ -1127,6 +1127,12 @@ MonoBehaviour:
   - 0
   - 0
   complete: 00000000
+  calmElevatorMusic: {fileID: 8300000, guid: 3ece83cc68d89d14aa0e097f083433a2, type: 3}
+  fastMinigameMusic:
+  - {fileID: 8300000, guid: 14cd699ee92bfb840b374a6ed6477ece, type: 3}
+  - {fileID: 8300000, guid: d9a6f60bda92e5548a42624335a32107, type: 3}
+  - {fileID: 8300000, guid: f16e1df574c987c4eaae4e4ca89e401e, type: 3}
+  - {fileID: 8300000, guid: 20e454eba04669849b6e3c8bfd0c5198, type: 3}
   levelsPlayed: 0
 --- !u!114 &796623421156755146
 MonoBehaviour:

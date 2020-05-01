@@ -13,11 +13,17 @@ public class persistentData : MonoBehaviour
     //int floorNum;
     float timerStartPoint;
     private AudioSource audioSource;
+    public AudioClip calmElevatorMusic;
+    public AudioClip[] fastMinigameMusic = new AudioClip[2];
+    private int randomSong;
+
     //private Timer timer;
     public int levelsPlayed = 0;
 
     void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);    
         //gamesPlayed = 0;
         //floorNum = 0;
         scores[0] = 0;
@@ -30,19 +36,35 @@ public class persistentData : MonoBehaviour
         //finishTimes[3] = 0;
     }
 
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        audioSource.Stop();
+        if(scene.name == "quips" || scene.name == "Start")
+        {
+            audioSource.clip = calmElevatorMusic;
+            audioSource.loop = true;
+            audioSource.Play();
+        } else if(scene.name == "SceneTransition") {
+            //play other sound
+        } else {
+            int temp = Random.Range(0, fastMinigameMusic.Length - 1);
+            while(randomSong == temp){
+                temp = Random.Range(0, fastMinigameMusic.Length - 1); //make sure we dont play same song twice
+            }
+            randomSong = temp;
+            audioSource.PlayOneShot(fastMinigameMusic[randomSong]);
+        }
+
+    }
    
     //singleton pattern
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         //timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
-        if (!audioSource.isPlaying)
-        {
-            audioSource.Play();
-        } else
-        {
-            audioSource.Stop();
-        }
+        
+
         if(main == null)
         {
             main = this;
