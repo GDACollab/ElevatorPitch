@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,14 @@ public class PauseMenu : MonoBehaviour
     public static int cursorPosition; //Controls which option is being hovered over
     public static bool muted = false;
     public static bool justPaused = false;
+
+    SoundManager menuAudio;
+    public AudioClip buttonPressed;
+
+    private void Start()
+    {
+        menuAudio = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -92,9 +101,9 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public static void select()
+    public void playSound()
     {
-        
+        menuAudio.playSound(buttonPressed);
     }
 
     public void QuitGame()
