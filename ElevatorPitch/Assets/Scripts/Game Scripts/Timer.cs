@@ -18,9 +18,14 @@ public class Timer : MonoBehaviour
 
     //Animation of elevator doors
     public Animator transition;
+    AudioSource elevatorSFX;
+    public AudioClip arrive;
+    public AudioClip beep;
 
     void Start()
     {
+        elevatorSFX = GetComponent<AudioSource>();
+
         persistentDataObj = GameObject.FindGameObjectWithTag("persData");
         persistentDataScript = persistentDataObj.GetComponent<persistentData>();
         gameMode = GameObject.FindGameObjectWithTag("GameMode");
@@ -40,6 +45,7 @@ public class Timer : MonoBehaviour
     //timer algorithm (source: https://stackoverflow.com/questions/30056471/how-make-the-script-wait-sleep-in-a-simple-way-in-unity)
     IEnumerator waitTime()
     {
+        elevatorSFX.PlayOneShot(arrive);
         float timeSet = maxTime;
         while (timeSet > 0)
         {
@@ -61,6 +67,7 @@ public class Timer : MonoBehaviour
 
         //Added by Santiago. Does the elevator door animation before loading next level
         transition.SetTrigger("Close Doors");
+        elevatorSFX.PlayOneShot(beep);
         yield return new WaitForSeconds(0.8f);
 
         persistentDataScript.nextLevel();
@@ -73,6 +80,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator closeDoors(){
         Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        elevatorSFX.PlayOneShot(beep);
         transition.SetTrigger("Close Doors");
         yield return new WaitForSeconds(0.8f);
         persistentDataScript.nextLevel();
