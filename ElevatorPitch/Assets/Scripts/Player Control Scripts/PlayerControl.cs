@@ -13,7 +13,6 @@ public class PlayerControl : MonoBehaviour
     public float movementSpeed;
     private SpriteRenderer sr;
     public GameObject pawn;
-    GameObject pauseMenu;
 
     bool paused = false;
     int index;
@@ -77,8 +76,6 @@ public class PlayerControl : MonoBehaviour
         if(paused)
         {
             Debug.Log("South Button Pressed");
-            //Play sound from PauseMenu
-
             if (PauseMenu.cursorPosition == 0)
             {
                 Time.timeScale = 1f;
