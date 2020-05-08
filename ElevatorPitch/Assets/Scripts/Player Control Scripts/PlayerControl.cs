@@ -13,6 +13,8 @@ public class PlayerControl : MonoBehaviour
     public float movementSpeed;
     private SpriteRenderer sr;
     public GameObject pawn;
+    public AudioClip buttonPress;
+    AudioSource source;
 
     bool paused = false;
     int index;
@@ -21,6 +23,7 @@ public class PlayerControl : MonoBehaviour
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     //Pause function
@@ -76,6 +79,7 @@ public class PlayerControl : MonoBehaviour
         if(paused)
         {
             Debug.Log("South Button Pressed");
+            source.PlayOneShot(buttonPress); //Play sound
             if (PauseMenu.cursorPosition == 0)
             {
                 Time.timeScale = 1f;
