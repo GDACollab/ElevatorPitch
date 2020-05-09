@@ -16,6 +16,7 @@ public class MinigameLoader : MonoBehaviour
     public GameObject[] text = new GameObject[4];
     public int levelsTillQuips = 3;
     persistentData persistentData;
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,14 @@ public class MinigameLoader : MonoBehaviour
             {
                 nextGame = 2;
                 maxTime = 1;
+            }
+            if (persistentData.levelsPlayed == persistentData.endingFloor) //Check if players have reached the final floor
+            {
+                nextGame = 3;
+            }
+            if(persistentData.lives <= 0) //Check if the players have run out of lives
+            {
+                gameOver = true;
             }
         }
         foreach (var x in text)
@@ -72,7 +81,15 @@ public class MinigameLoader : MonoBehaviour
             instructions = "Get ready!";
         }
         */
-        StartCoroutine(waitTime(nextGame, displayText));
+
+        if (!gameOver)
+        {
+            StartCoroutine(waitTime(nextGame, displayText));
+        }
+        else
+        {
+            //Show game-over screen
+        }
     }
 
     IEnumerator waitTime(int scene, int displayText)

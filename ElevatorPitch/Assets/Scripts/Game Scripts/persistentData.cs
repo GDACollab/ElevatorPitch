@@ -19,6 +19,8 @@ public class persistentData : MonoBehaviour
 
     //private Timer timer;
     public int levelsPlayed = 0;
+    public int endingFloor = 10;
+    public int lives = 4;
 
     void Start()
     {
@@ -105,9 +107,11 @@ public class persistentData : MonoBehaviour
         Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
     }
 
-    public void nextLevel()
+    public void nextLevel(bool playedMinigame)
     {
         levelsPlayed++;
+
+
         Debug.Log("NEXT LEVEL");
         complete[0] = false;
         complete[1] = false;
