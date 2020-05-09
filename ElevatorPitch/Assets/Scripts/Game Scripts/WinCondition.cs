@@ -79,6 +79,9 @@ public class WinCondition : MonoBehaviour
                     times[times.IndexOf(min)] = -1; //Set this person's time to -1, signifying that they've been checked off
                 }
                 break;
+            case 2: 
+                //
+                break;
             default:
                 //default template
                 Debug.Log("Gave no points");

@@ -12,6 +12,9 @@ public class PlayerControl : MonoBehaviour
     Vector2 move;
     public float movementSpeed;
     private SpriteRenderer sr;
+    private GameObject gameModeObj;
+    private GameObject persistantData;
+    private int gameMode;
     public GameObject pawn;
 
     bool paused = false;
@@ -19,6 +22,9 @@ public class PlayerControl : MonoBehaviour
 
     private void Start()
     {
+        persistantData = GameObject.FindGameObjectWithTag("persData");
+        gameModeObj = GameObject.FindGameObjectWithTag("GameMode");
+        gameMode = gameModeObj.GetComponent<WinCondition>().gameModeTemplate;
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
     }
@@ -39,6 +45,7 @@ public class PlayerControl : MonoBehaviour
             paused = false;
         }
     }
+
     void OnLeftFlick()
     {
         if (paused)
@@ -50,6 +57,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+
     void OnRightFlick()
     {
         if (paused)
@@ -67,10 +75,12 @@ public class PlayerControl : MonoBehaviour
         move = value.Get<Vector2>();
         //Debug.Log(move);
     }
+
     void OnUpButton()
     {
         Debug.Log("North Button Pressed");
     }
+
     void OnDownButton()
     {
         if(paused)
@@ -100,19 +110,25 @@ public class PlayerControl : MonoBehaviour
                 Debug.Log("Exit");
                 Application.Quit(); //Maybe replace this with going to the start screen?
             }
+        } else if(gameMode == 2) {
+            persistantData.GetComponent<persistentData>().buttonMash[index]++;
         }
     }
+
     void OnLeftButton()
     {
         Debug.Log("Left Button Pressed");
         
     }
+
     void OnRightButton()
     {
         Debug.Log("Right Button Pressed");
     }
+
     void FixedUpdate()
     {
+
         if (pawn != null)
         {
             if (move != Vector2.zero)
@@ -123,6 +139,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+
     void Rotation()
     {
         float angle = Mathf.Atan2(move.y, move.x) * 180/Mathf.PI;

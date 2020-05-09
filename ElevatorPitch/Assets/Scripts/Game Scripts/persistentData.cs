@@ -10,12 +10,14 @@ public class persistentData : MonoBehaviour
     public int[] scores = new int[4];
     public float[] finishTimes = new float[4];
     public bool[] complete = new bool[4];
+    public int[] buttonMash = new int[4];
     //int floorNum;
     float timerStartPoint;
     private AudioSource audioSource;
     public AudioClip calmElevatorMusic;
     public AudioClip[] fastMinigameMusic = new AudioClip[2];
     private int randomSong;
+    
 
     //private Timer timer;
     public int levelsPlayed = 0;
@@ -116,7 +118,6 @@ public class persistentData : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(1);
     }
-
 
 
 
