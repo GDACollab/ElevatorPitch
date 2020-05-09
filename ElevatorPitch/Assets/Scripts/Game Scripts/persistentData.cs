@@ -107,10 +107,9 @@ public class persistentData : MonoBehaviour
         Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
     }
 
-    public void nextLevel(bool playedMinigame)
+    public void nextLevel()
     {
         levelsPlayed++;
-
 
         Debug.Log("NEXT LEVEL");
         complete[0] = false;
