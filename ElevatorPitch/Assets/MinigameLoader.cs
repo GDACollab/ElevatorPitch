@@ -45,7 +45,7 @@ public class MinigameLoader : MonoBehaviour
         int cubicleRush = firstMinigame;
         Debug.Log("nextGame: " + nextGame);
         int displayText = nextGame - cubicleRush + 1;
-        if (displayText >= text.Length) //Minigame does not have a text object
+        if (displayText >= text.Length || displayText < 0) //Minigame does not have a text object
         {
             displayText = 0;
         }

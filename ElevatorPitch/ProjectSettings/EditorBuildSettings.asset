@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: e5ca7e443b286a147bce7811f502e549
@@ -20,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/quips.unity
     guid: 9e4b2084db59e6240a4d57b263e341ef
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 6fdecf1d63b490849b683b6662278c99
   - enabled: 1
     path: Assets/Scenes/CubicleRush.unity
     guid: 2d028247c8c952e41a2fcf4150cb8506
