@@ -19,6 +19,7 @@ public class persistentData : MonoBehaviour
 
     //private Timer timer;
     public int levelsPlayed = 0;
+    public int currentFloor = 0; //Similar to levelsPlayed, but only keeps track of minigames.
     public int endingFloor = 10;
     public int lives = 4;
 
@@ -42,7 +43,7 @@ public class persistentData : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         audioSource.Stop();
-        if(scene.name == "quips" || scene.name == "Start")
+        if(scene.name == "quips" || scene.name == "Start" || scene.name == "Ending")
         {
             audioSource.clip = calmElevatorMusic;
             audioSource.loop = true;
@@ -109,6 +110,10 @@ public class persistentData : MonoBehaviour
 
     public void nextLevel()
     {
+        if(SceneManager.GetActiveScene().name != "quips") //Does not count quips as minigames
+        {
+            currentFloor++;
+        }
         levelsPlayed++;
 
         Debug.Log("NEXT LEVEL");

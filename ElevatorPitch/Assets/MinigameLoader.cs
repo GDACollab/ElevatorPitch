@@ -37,7 +37,7 @@ public class MinigameLoader : MonoBehaviour
                 nextGame = 2;
                 maxTime = 1;
             }
-            if (persistentData.levelsPlayed == persistentData.endingFloor) //Check if players have reached the final floor
+            if (persistentData.currentFloor == persistentData.endingFloor) //Check if players have reached the final floor
             {
                 nextGame = 3;
             }

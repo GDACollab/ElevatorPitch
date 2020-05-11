@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
         {
             textDisplay.text = "Time: " + maxTime.ToString();
         }
-        if(!(SceneManager.GetActiveScene().name == "Start")){
+        if(!(SceneManager.GetActiveScene().name == "Start") && !(SceneManager.GetActiveScene().name == "Ending")){
             StartCoroutine(waitTime());
         }
     }
