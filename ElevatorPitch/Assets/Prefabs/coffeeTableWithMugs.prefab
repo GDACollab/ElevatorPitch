@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: e3c25b7c32e837e458be5af9b87729ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6aa53e19f1f540b262bd1fa4cbf49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationMultiplier: 1
 --- !u!1 &4359030874144572879
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +109,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6303634393341898084}
   - component: {fileID: 7367553336748525772}
+  - component: {fileID: 9219751274019115662}
+  - component: {fileID: 4495352392783325786}
   m_Layer: 0
   m_Name: YeetCoffee
   m_TagString: yeetMug
@@ -123,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4359030874144572879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: -1, z: -1}
+  m_LocalPosition: {x: 1.15, y: -1, z: 0}
   m_LocalScale: {x: 0.5538632, y: 0.5538632, z: 0.5538632}
   m_Children: []
   m_Father: {fileID: 3694132489495784805}
@@ -179,6 +182,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &9219751274019115662
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359030874144572879}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09436558, y: -0.1415479}
+  serializedVersion: 2
+  m_Radius: 1.8309138
+--- !u!50 &4495352392783325786
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359030874144572879}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4639138614594386760
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +229,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7735669389475732846}
   - component: {fileID: 5116772587398587997}
+  - component: {fileID: 4536620766242874260}
+  - component: {fileID: 9086386441937780099}
   m_Layer: 0
   m_Name: BlazeCoffee
   m_TagString: blazeMug
@@ -204,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4639138614594386760}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710695, w: 0.7071066}
-  m_LocalPosition: {x: 1.15, y: 1.13, z: -1}
+  m_LocalPosition: {x: 1.15, y: 1.13, z: 0}
   m_LocalScale: {x: 0.5538632, y: 0.5538632, z: 0.5538632}
   m_Children: []
   m_Father: {fileID: 3694132489495784805}
@@ -260,6 +302,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4536620766242874260
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639138614594386760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.09436647, y: -0.18873103}
+  serializedVersion: 2
+  m_Radius: 1.7129562
+--- !u!50 &9086386441937780099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639138614594386760}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6330203631477283277
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +349,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2542839630346038886}
   - component: {fileID: 5440196688325543811}
+  - component: {fileID: 9165377496963346299}
+  - component: {fileID: 2054379651929204485}
   m_Layer: 0
   m_Name: GianCoffee
   m_TagString: gianMug
@@ -285,7 +366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330203631477283277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -1, z: -1}
+  m_LocalPosition: {x: -1.07, y: -1, z: 0}
   m_LocalScale: {x: 0.5538632, y: 0.5538632, z: 0.5538632}
   m_Children: []
   m_Father: {fileID: 3694132489495784805}
@@ -341,6 +422,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &9165377496963346299
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330203631477283277}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05897831, y: -0.17693542}
+  serializedVersion: 2
+  m_Radius: 1.830914
+--- !u!50 &2054379651929204485
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330203631477283277}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7624127250207233640
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +469,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5965887818734454387}
   - component: {fileID: 6201681459480988113}
+  - component: {fileID: 7314054003966345598}
+  - component: {fileID: 5964063801181012857}
   m_Layer: 0
   m_Name: RobynCoffee
   m_TagString: robynMug
@@ -366,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7624127250207233640}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071071, w: 0.70710653}
-  m_LocalPosition: {x: -1.08, y: 1.12, z: -1}
+  m_LocalPosition: {x: -1.08, y: 1.12, z: 0}
   m_LocalScale: {x: 0.5538632, y: 0.5538632, z: 0.5538632}
   m_Children: []
   m_Father: {fileID: 3694132489495784805}
@@ -422,3 +542,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7314054003966345598
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624127250207233640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.23591363, y: -0.05897877}
+  serializedVersion: 2
+  m_Radius: 1.7719358
+--- !u!50 &5964063801181012857
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624127250207233640}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

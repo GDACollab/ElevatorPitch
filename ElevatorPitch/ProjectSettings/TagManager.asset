@@ -28,6 +28,10 @@ TagManager:
   - gianMug
   - blazeMug
   - yeetMug
+  - robynCoffeeArm
+  - gianCoffeeArm
+  - blazeCoffeeArm
+  - yeetCoffeeArm
   layers:
   - Default
   - TransparentFX
