@@ -149,6 +149,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2c24e0b245dbc8449b7852cbd2b80722, type: 3}
   - {fileID: 21300000, guid: c454052e51610bc4588b0b52e4e6fff0, type: 3}
   - {fileID: 21300000, guid: b981125684631a24cb353a6dd32a62e5, type: 3}
+  armSprites:
+  - {fileID: 21300000, guid: 356035a4648563c4dba067bf9365bb64, type: 3}
+  - {fileID: 21300000, guid: 3513cd54f762d2e4880899b34f82ca76, type: 3}
+  - {fileID: 21300000, guid: 01d4139979f187d49aec7bfb2ac8b711, type: 3}
+  - {fileID: 21300000, guid: d552401c995fdf74b80757d5b0929d3e, type: 3}
   controllerIndex: -1
   gc: {fileID: 0}
 --- !u!212 &3047019609713163807
