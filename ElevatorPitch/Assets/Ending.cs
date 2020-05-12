@@ -43,7 +43,7 @@ public class Ending : MonoBehaviour
 
             //Set dialogue. Can be expanded later.
             dialogue.text = "Congratulations, you reached the top floor!\n" + 
-                            "The winner is " + getPlayerName(placement[0]) + "!";
+                            "For performing the best overall, the new CEO is " + getPlayerName(placement[0]) + "!";
 
             //Set ending card
             endingCards[placement[0]].SetActive(true);
