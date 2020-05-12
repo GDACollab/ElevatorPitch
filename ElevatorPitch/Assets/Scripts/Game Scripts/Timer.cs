@@ -39,6 +39,10 @@ public class Timer : MonoBehaviour
         if(!(SceneManager.GetActiveScene().name == "Start") && !(SceneManager.GetActiveScene().name == "Ending")){
             StartCoroutine(waitTime());
         }
+        else
+        {
+            textDisplay.text = "";
+        }
     }
 
 

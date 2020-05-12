@@ -2,23 +2,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+//Written by Santiago Ponce
+//Some code borrowed from VNManager by Jacob Compton
 
 public class Ending : MonoBehaviour
 {
     public GameObject[] endingCards = new GameObject[4];
     persistentData persistentData;
     int[] placement = new int[4]; //This array will hold each player's index in their designated placement (0 = 1st place, 1 = 2nd place, etc.)
+    TextMeshProUGUI dialogue;
 
     // Start is called before the first frame update
     void Start()
     {
         persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
+        dialogue = GameObject.FindGameObjectWithTag("vnCharacterSpeechText").GetComponent<TextMeshProUGUI>(); //Get name text box
 
-        if (persistentData)
+        if (persistentData && dialogue)
         {
             Debug.Log("Found Pers Data");
             
-            //Assign each player to a placement
+            //Assign each player to a placement rank
             float max = Mathf.Infinity;
             int next = -200;
             for(int i = 0; i < 4; i++)
@@ -33,6 +40,13 @@ public class Ending : MonoBehaviour
                 }
                 max = next;
             }
+
+            //Set dialogue. Can be expanded later.
+            dialogue.text = "Congratulations, you reached the top floor!\n" + 
+                            "The winner is " + getPlayerName(placement[0]) + "!";
+
+            //Set ending card
+            endingCards[placement[0]].SetActive(true);
         }
         else
         {
