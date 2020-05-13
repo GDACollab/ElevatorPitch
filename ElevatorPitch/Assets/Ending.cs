@@ -14,6 +14,7 @@ public class Ending : MonoBehaviour
     persistentData persistentData;
     int[] placement = new int[4]; //This array will hold each player's index in their designated placement (0 = 1st place, 1 = 2nd place, etc.)
     TextMeshProUGUI dialogue;
+    string[] dialogueSequence = new string[3];
 
     // Start is called before the first frame update
     void Start()
@@ -28,25 +29,38 @@ public class Ending : MonoBehaviour
             //Assign each player to a placement rank
             float max = Mathf.Infinity;
             int next = -200;
+            bool[] skip = new bool[4];
             for(int i = 0; i < 4; i++)
             {
                 for(int j = 0; j < 4; j++)
                 {
-                    if(persistentData.scores[j] > next && persistentData.scores[j] < max) //Ties are based on port-priority
+                    if(persistentData.scores[j] >= next && !skip[j]) //Ties are based on port-priority
                     {
                         next = persistentData.scores[j];
                         placement[i] = j;
                     }
                 }
                 max = next;
+                next = -200;
+                skip[placement[i]] = true;
             }
 
             //Set dialogue. Can be expanded later.
             dialogue.text = "Congratulations, you reached the top floor!\n" + 
                             "For performing the best overall, the new CEO is " + getPlayerName(placement[0]) + "!";
 
+            //Dialogue sequence. If we don't want to show scores then just erase some of this.
+            dialogueSequence[0] = "After countless chaotic floors, the group finally reaches the top and meets the CEO.";
+            dialogueSequence[1] = "For performing the best overall, " + getPlayerName(placement[0]) + " is chosen as the new CEO.";
+            dialogueSequence[2] = "Congradulations Player " + (placement[0] + 1) + "! You scored " + persistentData.scores[placement[0]] + " points.\n" +
+                                  "2nd Place: " + getPlayerName(placement[1]) + " with " + persistentData.scores[placement[1]] + " points.\n" +
+                                  "3rd Place: " + getPlayerName(placement[2]) + " with " + persistentData.scores[placement[2]] + " points.\n" +
+                                  "4th Place: " + getPlayerName(placement[3]) + " with " + persistentData.scores[placement[3]] + " points.";
+
             //Set ending card
             endingCards[placement[0]].SetActive(true);
+
+            StartCoroutine(waitTime());
         }
         else
         {
@@ -54,10 +68,13 @@ public class Ending : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator waitTime()
     {
-        
+        dialogue.text = dialogueSequence[0];
+        yield return new WaitForSeconds(5);
+        dialogue.text = dialogueSequence[1];
+        yield return new WaitForSeconds(5);
+        dialogue.text = dialogueSequence[2];
     }
 
     //Returns the name of the corresponding player. Pretty simple.
