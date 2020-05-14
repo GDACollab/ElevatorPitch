@@ -122,25 +122,25 @@ public class PlayerControl : MonoBehaviour
             switch (index) //0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
             {
                 case 0:
-                    if (blazeArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    if (blazeArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false && !(blazeArm.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("blakeCoffeeGrab")))
                     {
                         blazeArm.GetComponent<Animator>().SetTrigger("buttonPushed");
                     }
                     break;
                 case 1:
-                    if (gianArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    if (gianArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false && !(gianArm.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("gianCoffeeGrab")))
                     {
                         gianArm.GetComponent<Animator>().SetTrigger("buttonPushed");
                     }
                     break;
                 case 2:
-                    if (robynArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    if (robynArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false && !(robynArm.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("robynCoffeeGrab")))
                     {
                         robynArm.GetComponent<Animator>().SetTrigger("buttonPushed");
                     }
                     break;
                 case 3:
-                    if (yeetArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    if (yeetArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false && !(yeetArm.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("yeetCoffeeGrab")))
                     {
                         yeetArm.GetComponent<Animator>().SetTrigger("buttonPushed");
                     }

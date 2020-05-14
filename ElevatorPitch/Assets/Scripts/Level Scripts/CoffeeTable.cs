@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoffeeTable : MonoBehaviour
 {
     GameObject table;
-    public int rotationMultiplier = 1;
+    public float rotationMultiplier = 1;
 
     // Start is called before the first frame update
     void Start()
