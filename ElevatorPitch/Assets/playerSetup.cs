@@ -8,6 +8,7 @@ public class playerSetup : MonoBehaviour
     // Start is called before the first frame update
     private PlayerInput playerInput;
     public Sprite[] playerSprites;
+    public Sprite[] armSprites;
     private SpriteRenderer sr;
     public int controllerIndex = -1;
     public GoalComplete gc;
@@ -16,27 +17,29 @@ public class playerSetup : MonoBehaviour
     {
         gc = GetComponent<GoalComplete>();
         playerInput = GetComponent<PlayerInput>();
-        
+
     }
-     
-    public void setup(int index)
+
+    public void setup(int index, int gameMode)
     {
         controllerIndex = index;
         sr = GetComponent<SpriteRenderer>();
         sr.sprite = playerSprites[controllerIndex];
+
         gc.playerIndex = controllerIndex;
         spawnpoint = GameObject.FindGameObjectWithTag("spawn" + index);
         //if (spawnpoint != null)
         //{
-            transform.position = spawnpoint.transform.position;
-            spawnpoint.SetActive(false);
+        transform.position = spawnpoint.transform.position;
+
+        spawnpoint.SetActive(false);
         //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnEnable()
