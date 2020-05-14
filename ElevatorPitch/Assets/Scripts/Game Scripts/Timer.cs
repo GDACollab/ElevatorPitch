@@ -72,7 +72,6 @@ public class Timer : MonoBehaviour
     }
 
     IEnumerator closeDoors(){
-        Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         transition.SetTrigger("Close Doors");
         yield return new WaitForSeconds(0.8f);
         persistentDataScript.nextLevel();

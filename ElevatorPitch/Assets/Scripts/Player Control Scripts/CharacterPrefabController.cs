@@ -11,7 +11,8 @@ public class CharacterPrefabController : MonoBehaviour
     private int playerIndex;
     private GameObject gameModeObj;
     private int gameMode;
-    private GameObject spawnPoint;
+    PlayerControl playerControl;
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -25,7 +26,10 @@ public class CharacterPrefabController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         gameModeObj = GameObject.FindGameObjectWithTag("GameMode");
+        Debug.Log("Game mode: " + gameModeObj.GetComponent<WinCondition>().gameModeTemplate);
         gameMode = gameModeObj.GetComponent<WinCondition>().gameModeTemplate;
+        playerControl = gameObject.GetComponent<PlayerControl>();
+        playerControl.setGameMode(gameMode);
         if (!(scene.name == "quips") && !(scene.name == "CoffeeCupGame"))
         {
             if (scene.name == "Start")
@@ -40,30 +44,10 @@ public class CharacterPrefabController : MonoBehaviour
         }
         else if(scene.name == "CoffeeCupGame")
         {
+            playerControl.findCoffeeArms();
             var a = GetComponent<PlayerControl>();
             a.enabled = true;
-            spawnPoint = GameObject.FindGameObjectWithTag("spawn" + playerIndex);
-            switch (playerIndex)
-            {
-                case 0:
-                    GameObject blazeArm = GameObject.FindGameObjectWithTag("blazeCoffeeArm");
-                    blazeArm.transform.position = spawnPoint.transform.position;
-                    break;
-                case 1:
-                    GameObject gianArm = GameObject.FindGameObjectWithTag("gianCoffeeArm");
-                    gianArm.transform.position = spawnPoint.transform.position;
-                    break;
-                case 2:
-                    GameObject robynArm = GameObject.FindGameObjectWithTag("robynCoffeeArm");
-                    robynArm.transform.position = spawnPoint.transform.position;
-                    break;
-                case 3:
-                    GameObject yeetArm = GameObject.FindGameObjectWithTag("yeetCoffeeArm");
-                    yeetArm.transform.position = spawnPoint.transform.position;
-                    break;
-                default:
-                    break;
-            }
+            a.setGameMode(gameMode); //Update gameMode in PlayerControl so it knows what controls to use
         }
     }
 

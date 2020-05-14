@@ -32,8 +32,6 @@ public class playerSetup : MonoBehaviour
         //{
         transform.position = spawnpoint.transform.position;
 
-        transform.rotation = spawnpoint.transform.rotation;
-
         spawnpoint.SetActive(false);
         //}
     }

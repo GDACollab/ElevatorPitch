@@ -8,19 +8,15 @@ public class PlayerControl : MonoBehaviour
 {
     [Range(0f, 10f)]
     public float interpolation;
-
     Vector2 move;
     public float movementSpeed;
     private SpriteRenderer sr;
     private GameObject persistantData;
-    //private GameObject prefabController;
+    private CharacterPrefabController prefabController;
     private int gameMode;
     public GameObject pawn;
-
     bool paused = false;
     int index;
-
-    Vector3 grabPosition;
     GameObject blazeArm;
     GameObject gianArm;
     GameObject robynArm;
@@ -31,14 +27,11 @@ public class PlayerControl : MonoBehaviour
         persistantData = GameObject.FindGameObjectWithTag("persData");
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
-        gameMode = gameObject.GetComponent<CharacterPrefabController>().getGameMode();
-        Debug.Log("Gotten gameMode: " + gameMode);
+        prefabController = gameObject.GetComponent<CharacterPrefabController>();
+        gameMode = prefabController.getGameMode();
         if (gameMode == 2)
         {
-            blazeArm = GameObject.FindGameObjectWithTag("blazeCoffeeArm");
-            gianArm = GameObject.FindGameObjectWithTag("gianCoffeeArm");
-            robynArm = GameObject.FindGameObjectWithTag("robynCoffeeArm");
-            yeetArm = GameObject.FindGameObjectWithTag("yeetCoffeeArm");
+            findCoffeeArms();
         }
 
     }
@@ -96,10 +89,9 @@ public class PlayerControl : MonoBehaviour
 
     void OnDownButton()
     {
-        Debug.Log("South Button Pressed");
+        Debug.Log("South Button Pressed. Gamemode: " + gameMode);
         if (paused)
         {
-            Debug.Log("South Button Pressed");
             if (PauseMenu.cursorPosition == 0)
             {
                 Time.timeScale = 1f;
@@ -125,7 +117,40 @@ public class PlayerControl : MonoBehaviour
                 Application.Quit(); //Maybe replace this with going to the start screen?
             }
         }
-        else if (gameMode == 2)
+        else if (gameMode == 2) //Coffee Game
+        {
+            switch (index) //0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
+            {
+                case 0:
+                    if (blazeArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    {
+                        blazeArm.GetComponent<Animator>().SetTrigger("buttonPushed");
+                    }
+                    break;
+                case 1:
+                    if (gianArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    {
+                        gianArm.GetComponent<Animator>().SetTrigger("buttonPushed");
+                    }
+                    break;
+                case 2:
+                    if (robynArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    {
+                        robynArm.GetComponent<Animator>().SetTrigger("buttonPushed");
+                    }
+                    break;
+                case 3:
+                    if (yeetArm.GetComponent<coffeeGrab>().GetGrabbedMug(index) == false)
+                    {
+                        yeetArm.GetComponent<Animator>().SetTrigger("buttonPushed");
+                    }
+                    break;
+                default:
+                    Debug.Log("Couldn't find trigger for arm animation");
+                    break;
+            }
+        }
+        else if(gameMode == 3) //Button Mash Game
         {
             persistantData.GetComponent<persistentData>().buttonMash[index]++;
         }
@@ -139,55 +164,18 @@ public class PlayerControl : MonoBehaviour
 
     void OnRightButton()
     {
-        Debug.Log("Right Button Pressed. Gamemode is " + gameMode);
-        if (gameMode == 2)
-        {
-            grabPosition = new Vector3(-1, -1, 0);
-            switch (index)
-            {
-                case 0:
-                    //blazeArm.transform.position = Vector2.Lerp(blazeArm.transform.position, grabPosition, Time.time);
-                    blazeArm.transform.position = Vector2.MoveTowards(blazeArm.transform.position, grabPosition, 2);
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                default:
-                    break;
-            }
-            //pawn.transform.localPosition += new Vector3(2, 2, 2);
-            //pawn.transform.localPosition = Vector2.MoveTowards(pawn.transform.localPosition, new Vector3(-1, -1, 0), 1);
-            //while (pawn.transform.localPosition != grabPosition)
-            //{
-            //    pawn.transform.localPosition = Vector2.MoveTowards(pawn.transform.localPosition, grabPosition, .01f);
-            //}
-
-
-            //pawn.transform.localPosition = Vector2.Lerp(pawn.transform.localPosition, grabPosition, Time.time);
-        }
+        Debug.Log("Right Button Pressed");
     }
 
     void FixedUpdate()
     {
+
         if (pawn != null)
         {
             if (move != Vector2.zero)
             {
-                if (gameMode != 2) //If in gameMode 2, don't allow movement
-                {
-                    pawn.transform.localPosition = pawn.transform.localPosition += new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
-                    Rotation();
-                }
-                else
-                {
-                    //pawn.transform.localPosition = Vector2.Lerp(pawn.transform.localPosition, grabPosition, Time.time/20);
-                    grabPosition = new Vector3(-1, -1, 0);
-                    //blazeArm.transform.position += Vector3.MoveTowards(blazeArm.transform.position, grabPosition, 2 * Time.deltaTime);
-                }
-
+                pawn.transform.localPosition = pawn.transform.localPosition += new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
+                Rotation();
             }
         }
     }
@@ -202,6 +190,14 @@ public class PlayerControl : MonoBehaviour
     public void setGameMode(int mode)
     {
         gameMode = mode;
+    }
+
+    public void findCoffeeArms()
+    {
+        blazeArm = GameObject.FindGameObjectWithTag("blazeCoffeeArm");
+        gianArm = GameObject.FindGameObjectWithTag("gianCoffeeArm");
+        robynArm = GameObject.FindGameObjectWithTag("robynCoffeeArm");
+        yeetArm = GameObject.FindGameObjectWithTag("yeetCoffeeArm");
     }
 }
 
