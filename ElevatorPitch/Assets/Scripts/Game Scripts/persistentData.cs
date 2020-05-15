@@ -22,6 +22,8 @@ public class persistentData : MonoBehaviour
     public int currentFloor = 0; //Similar to levelsPlayed, but only keeps track of minigames.
     public int endingFloor = 10;
     public int lives = 4;
+    int[] defaultValues = new int[4];
+    public bool ending = false; //This value should always be false
 
     void Start()
     {
@@ -37,6 +39,11 @@ public class persistentData : MonoBehaviour
         //finishTimes[1] = 0;
         //finishTimes[2] = 0;
         //finishTimes[3] = 0;
+
+        defaultValues[0] = levelsPlayed;
+        defaultValues[1] = currentFloor;
+        defaultValues[2] = endingFloor;
+        defaultValues[3] = lives;
     }
 
 
@@ -127,8 +134,18 @@ public class persistentData : MonoBehaviour
 
     public void playAgain() //Reset all values to default and return to start
     {
-        
+        for(int i = 0; i < 4; i++) //Reset scores
+        {
+            scores[i] = 0;
+        }
+
+        levelsPlayed = defaultValues[0]; //Reset values
+        currentFloor = defaultValues[1];
+        endingFloor = defaultValues[2];
+        lives = defaultValues[3];
+
+        ending = false;
+
+        SceneManager.LoadScene(0); //Load start screen
     }
-
-
 }

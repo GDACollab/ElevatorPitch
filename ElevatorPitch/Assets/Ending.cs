@@ -57,7 +57,8 @@ public class Ending : MonoBehaviour
             dialogueSequence[2] = "Congradulations Player " + (placement[0] + 1) + "! You scored " + persistentData.scores[placement[0]] + " points.\n" +
                                   "2nd Place: " + getPlayerName(placement[1]) + " with " + persistentData.scores[placement[1]] + " points.\n" +
                                   "3rd Place: " + getPlayerName(placement[2]) + " with " + persistentData.scores[placement[2]] + " points.\n" +
-                                  "4th Place: " + getPlayerName(placement[3]) + " with " + persistentData.scores[placement[3]] + " points.";
+                                  "4th Place: " + getPlayerName(placement[3]) + " with " + persistentData.scores[placement[3]] + " points.\n " +
+                                  "Press A or SPACEBAR to play again.";
 
             //Set ending card
             endingCards[placement[0]].SetActive(true);
@@ -84,6 +85,7 @@ public class Ending : MonoBehaviour
 
         mainCamera.transform.position = new Vector3(-0.41f, -0.28f, -10f);
         dialogue.text = dialogueSequence[2];
+        persistentData.ending = true;
     }
 
     //Returns the name of the corresponding player. Pretty simple.

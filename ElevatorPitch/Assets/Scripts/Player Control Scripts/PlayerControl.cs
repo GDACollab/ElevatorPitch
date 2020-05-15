@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject pawn;
     public AudioClip buttonPress;
     AudioSource source;
+    persistentData pd;
 
     bool paused = false;
     int index;
@@ -24,6 +25,7 @@ public class PlayerControl : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
         source = gameObject.GetComponent<AudioSource>();
+        pd = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
     }
 
     //Pause function
@@ -72,13 +74,17 @@ public class PlayerControl : MonoBehaviour
     }
     void OnUpButton()
     {
-        Debug.Log("North Button Pressed");
+        //Debug.Log("North Button Pressed");
     }
     void OnDownButton()
     {
+        if(pd.ending)
+        {
+            pd.playAgain();
+        }
         if(paused)
         {
-            Debug.Log("South Button Pressed");
+            //Debug.Log("South Button Pressed");
             source.PlayOneShot(buttonPress); //Play sound
             if (PauseMenu.cursorPosition == 0)
             {
@@ -108,12 +114,12 @@ public class PlayerControl : MonoBehaviour
     }
     void OnLeftButton()
     {
-        Debug.Log("Left Button Pressed");
+        //Debug.Log("Left Button Pressed");
         
     }
     void OnRightButton()
     {
-        Debug.Log("Right Button Pressed");
+        //Debug.Log("Right Button Pressed");
     }
     void FixedUpdate()
     {
