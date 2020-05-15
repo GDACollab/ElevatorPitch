@@ -15,12 +15,14 @@ public class Ending : MonoBehaviour
     int[] placement = new int[4]; //This array will hold each player's index in their designated placement (0 = 1st place, 1 = 2nd place, etc.)
     TextMeshProUGUI dialogue;
     string[] dialogueSequence = new string[3];
+    Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
         dialogue = GameObject.FindGameObjectWithTag("vnCharacterSpeechText").GetComponent<TextMeshProUGUI>(); //Get name text box
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         if (persistentData && dialogue)
         {
@@ -70,10 +72,17 @@ public class Ending : MonoBehaviour
 
     IEnumerator waitTime()
     {
+        mainCamera.transform.position = new Vector3(-11.67f, 0.21f, -10f);
+        mainCamera.orthographicSize = 4.5f;
         dialogue.text = dialogueSequence[0];
         yield return new WaitForSeconds(5);
+
+        mainCamera.transform.position = new Vector3(-11.67f, -6.93f, -10f);
+
         dialogue.text = dialogueSequence[1];
         yield return new WaitForSeconds(5);
+
+        mainCamera.transform.position = new Vector3(-0.41f, -0.28f, -10f);
         dialogue.text = dialogueSequence[2];
     }
 

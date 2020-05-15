@@ -125,7 +125,10 @@ public class persistentData : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-
+    public void playAgain() //Reset all values to default and return to start
+    {
+        
+    }
 
 
 }
