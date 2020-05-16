@@ -13,8 +13,12 @@ public class playerSetup : MonoBehaviour
     public int controllerIndex = -1;
     public GoalComplete gc;
     private GameObject spawnpoint;
+    private Animator anim;
+    private Rigidbody2D rb;
     void Awake()
     {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         gc = GetComponent<GoalComplete>();
         playerInput = GetComponent<PlayerInput>();
 
@@ -31,7 +35,7 @@ public class playerSetup : MonoBehaviour
         //if (spawnpoint != null)
         //{
         transform.position = spawnpoint.transform.position;
-
+        anim.SetInteger("charIndex", index);
         spawnpoint.SetActive(false);
         //}
     }
@@ -39,7 +43,8 @@ public class playerSetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log("XVEL : " + rb.velocity.x);
+        //anim.SetFloat("xVel", Mathf.Abs(rb.velocity.x));
     }
 
     private void OnEnable()
