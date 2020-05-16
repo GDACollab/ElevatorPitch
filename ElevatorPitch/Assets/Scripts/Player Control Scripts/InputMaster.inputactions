@@ -171,7 +171,7 @@
                     "name": "",
                     "id": "04cfd0f0-bf87-44bb-9eda-8b5c4451da48",
                     "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "DownButton",

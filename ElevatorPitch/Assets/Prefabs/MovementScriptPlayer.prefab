@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7648191246763147710}
   - component: {fileID: 3047019609713163807}
   - component: {fileID: 1248085728757470745}
+  - component: {fileID: 2507151788865549640}
   m_Layer: 10
   m_Name: MovementScriptPlayer
   m_TagString: Untagged
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10084039, y: 0}
+  m_Offset: {x: -0.03060627, y: -0.14787865}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.50429, y: 3.2}
+  m_Size: {x: 1.8053875, y: 4.514473}
   m_EdgeRadius: 0
 --- !u!114 &7648191246763147710
 MonoBehaviour:
@@ -149,6 +150,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2c24e0b245dbc8449b7852cbd2b80722, type: 3}
   - {fileID: 21300000, guid: c454052e51610bc4588b0b52e4e6fff0, type: 3}
   - {fileID: 21300000, guid: b981125684631a24cb353a6dd32a62e5, type: 3}
+  armSprites:
+  - {fileID: 21300000, guid: 356035a4648563c4dba067bf9365bb64, type: 3}
+  - {fileID: 21300000, guid: 3513cd54f762d2e4880899b34f82ca76, type: 3}
+  - {fileID: 21300000, guid: 01d4139979f187d49aec7bfb2ac8b711, type: 3}
+  - {fileID: 21300000, guid: d552401c995fdf74b80757d5b0929d3e, type: 3}
   controllerIndex: -1
   gc: {fileID: 0}
 --- !u!212 &3047019609713163807
@@ -297,3 +303,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2507151788865549640
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705504282659492510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c80d7ee51cf8384b9a5454a03829eee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

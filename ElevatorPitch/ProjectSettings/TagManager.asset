@@ -23,6 +23,15 @@ TagManager:
   - leftVnNameText
   - leftCharacterNameBox
   - rightCharacterNameBox
+  - coffeeTable
+  - robynMug
+  - gianMug
+  - blazeMug
+  - yeetMug
+  - robynCoffeeArm
+  - gianCoffeeArm
+  - blazeCoffeeArm
+  - yeetCoffeeArm
   layers:
   - Default
   - TransparentFX

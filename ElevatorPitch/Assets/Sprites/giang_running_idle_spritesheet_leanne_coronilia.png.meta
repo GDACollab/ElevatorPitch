@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: bc9867bc6b048954c803de141c932419
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6725249040732619919
+    second: giang_running_idle_spritesheet_leanne_coronilia_0
+  - first:
+      213: -5706064047832421921
+    second: giang_running_idle_spritesheet_leanne_coronilia_1
+  - first:
+      213: -6230392019296628631
+    second: giang_running_idle_spritesheet_leanne_coronilia_2
+  - first:
+      213: 6738618863437244022
+    second: giang_running_idle_spritesheet_leanne_coronilia_3
+  - first:
+      213: -7225661720453740969
+    second: giang_running_idle_spritesheet_leanne_coronilia_4
+  - first:
+      213: -4769379783524275857
+    second: giang_running_idle_spritesheet_leanne_coronilia_5
+  - first:
+      213: 1535211064640106532
+    second: giang_running_idle_spritesheet_leanne_coronilia_6
+  - first:
+      213: 4804435898382113237
+    second: giang_running_idle_spritesheet_leanne_coronilia_7
+  - first:
+      213: -4550089123548779255
+    second: giang_running_idle_spritesheet_leanne_coronilia_8
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1332
+        width: 408
+        height: 523
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49713194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc636883bfd52f4e808a99793fc83ad
+      internalID: -6725249040732619919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_1
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1310
+        width: 388
+        height: 562
+      alignment: 9
+      pivot: {x: 0.5845422, y: 0.46263346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f8d6700268d4241b84b4b4d240ca23
+      internalID: -5706064047832421921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_2
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1299
+        width: 343
+        height: 575
+      alignment: 9
+      pivot: {x: 0.53199595, y: 0.45217392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0589e29511b6545bb076709858f907
+      internalID: -6230392019296628631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 669
+        width: 356
+        height: 610
+      alignment: 9
+      pivot: {x: 0.47253522, y: 0.4262295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc369447c6058cf4892c081f5b50ee37
+      internalID: 6738618863437244022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_4
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 682
+        width: 409
+        height: 579
+      alignment: 9
+      pivot: {x: 0.5639632, y: 0.4490501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2398970e2a9cccc4eb2ee747901c1e75
+      internalID: -7225661720453740969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_5
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 652
+        width: 376
+        height: 583
+      alignment: 9
+      pivot: {x: 0.6163574, y: 0.44596913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7756468d5125a6e4591f26268fdb3a26
+      internalID: -4769379783524275857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 39
+        width: 315
+        height: 568
+      alignment: 9
+      pivot: {x: 0.51538646, y: 0.45774648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a655f5f656e1742a47b3115cd5eb5f
+      internalID: 1535211064640106532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_7
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 27
+        width: 354
+        height: 591
+      alignment: 9
+      pivot: {x: 0.4755499, y: 0.45516074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ecc61e02ec44243b9518651f74ef09
+      internalID: 4804435898382113237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: giang_running_idle_spritesheet_leanne_coronilia_8
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 15
+        width: 299
+        height: 611
+      alignment: 9
+      pivot: {x: 0.5618729, y: 0.42553192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6658c27ce521745a131f27853d924e
+      internalID: -4550089123548779255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

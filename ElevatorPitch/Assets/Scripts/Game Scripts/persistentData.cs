@@ -10,14 +10,13 @@ public class persistentData : MonoBehaviour
     public int[] scores = new int[4];
     public float[] finishTimes = new float[4];
     public bool[] complete = new bool[4];
+    public int[] buttonMash = new int[4];
     //int floorNum;
-    float timerStartPoint;
+    //int gamesPlayed;
     private AudioSource audioSource;
     public AudioClip calmElevatorMusic;
     public AudioClip[] fastMinigameMusic = new AudioClip[2];
     private int randomSong;
-
-    //private Timer timer;
     public int levelsPlayed = 0;
     public int currentFloor = 0; //Similar to levelsPlayed, but only keeps track of minigames.
     public int endingFloor = 10;
@@ -28,7 +27,7 @@ public class persistentData : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);    
+        OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
         //gamesPlayed = 0;
         //floorNum = 0;
         scores[0] = 0;
@@ -67,13 +66,11 @@ public class persistentData : MonoBehaviour
         }
 
     }
-   
+
     //singleton pattern
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        //timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
-        
 
         if(main == null)
         {
@@ -90,24 +87,7 @@ public class persistentData : MonoBehaviour
         Debug.Log("PLAYER JOINED");
     }
 
-    //any functions needed for getting or setting data
-    //ex:
-
-    //public void updateScores(int x)
-    //{ //this function doesnt actually do anything just an example, there will probably be something separate to control scores
-    //    scores[0] =+ x;
-    //    scores[1] =+ x;
-    //    scores[2] =+ x;
-    //    scores[3] =+ x;
-    //}
-
-    //public float getTimerStart()
-    //{
-    //    timerStartPoint = floorNum * floorNum; //not actually how we are going to calculate, just an example
-    //    return timerStartPoint;
-    //}
-
-    public void setFinishTime(int playerIndex)
+    public void setFinishTime(int playerIndex) //Player index = 0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
     {
         Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         string[] temp = timer.textDisplay.text.Split(' ');
@@ -128,8 +108,7 @@ public class persistentData : MonoBehaviour
         complete[1] = false;
         complete[2] = false;
         complete[3] = false;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); //Loading transition scene where it decides the next level
     }
 
     public void playAgain() //Reset all values to default and return to start

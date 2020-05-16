@@ -171,7 +171,7 @@ MonoBehaviour:
   start: {x: 0, y: 0, z: 0}
   moveleftright: 0
   moverightleft: 0
-  moveupdown: 1
+  moveupdown: 0
 --- !u!1 &4967966048242591216
 GameObject:
   m_ObjectHideFlags: 0

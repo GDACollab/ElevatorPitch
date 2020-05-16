@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour
 {
-    [Tooltip("0: Reach goal; 1: Survive")]
+    [Tooltip("0: Reach goal; 1: Survive; 2: CoffeeGame")]
     public int gameModeTemplate;
-    //public GoalComplete player1, player2, player3, player4;
     persistentData persistentData;
 
     private void Start()
@@ -18,6 +17,10 @@ public class WinCondition : MonoBehaviour
     {
         List<float> times = new List<float>(persistentData.finishTimes);
         int points = 3;
+        if(gameMode == 2) //CoffeeGame uses same scoring as gamemode 0, just needed to tell the difference
+        {
+            gameMode = 0;
+        }
         switch (gameMode)
         {
             case 0: //Reach Goal
@@ -78,6 +81,9 @@ public class WinCondition : MonoBehaviour
                     }
                     times[times.IndexOf(min)] = -1; //Set this person's time to -1, signifying that they've been checked off
                 }
+                break;
+            case 2: 
+                //
                 break;
             default:
                 //default template
