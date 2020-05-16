@@ -1560,7 +1560,7 @@ PrefabInstance:
     - target: {fileID: 8088531314583555087, guid: 2c59556c427eef447ba52632be262d37,
         type: 3}
       propertyPath: endingFloor
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c59556c427eef447ba52632be262d37, type: 3}
