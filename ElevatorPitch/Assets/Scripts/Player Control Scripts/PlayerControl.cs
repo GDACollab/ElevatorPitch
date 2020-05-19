@@ -86,14 +86,37 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void OnUpFlick()
+    {
+        if (paused && PauseMenu.cursorPosition == 1)
+        {
+            //Increase volume
+            PauseMenu.muted = false;
+            AudioListener.volume += 0.1f;
+            if (AudioListener.volume > 1.0)
+            {
+                AudioListener.volume = 1.0f;
+            }
+        }
+    }
+
+    void OnDownFlick()
+    {
+        if(paused && PauseMenu.cursorPosition == 1)
+        {
+            //Decrease volume
+            AudioListener.volume -= 0.1f;
+            if (AudioListener.volume <= 0.0)
+            {
+                PauseMenu.muted = true;
+                AudioListener.volume = 0.0f;
+            }
+        }
+    }
+
     void OnMovement(InputValue value)
     {
         move = value.Get<Vector2>();
-    }
-
-    void OnUpButton()
-    {
-        //Debug.Log("North Button Pressed");
     }
 
     void OnDownButton()
@@ -118,6 +141,7 @@ public class PlayerControl : MonoBehaviour
             else if (PauseMenu.cursorPosition == 1)
             {
                 //Mute, could update with full volume control later
+                /*
                 if (PauseMenu.muted)
                 {
                     AudioListener.volume = 1.0f; //Might not work for all audio sources
@@ -128,6 +152,7 @@ public class PlayerControl : MonoBehaviour
                     AudioListener.volume = 0.0f;
                     PauseMenu.muted = true;
                 }
+                */
             }
             else if (PauseMenu.cursorPosition == 2)
             {
