@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         //Check for cursor position
         if (cursorPosition == 0) //Highlight resume
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
                 buttons[i].SetActive(false);
             }
@@ -57,25 +57,29 @@ public class PauseMenu : MonoBehaviour
         }
         else if (cursorPosition == 1 && !muted) //Highlight sound
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
                 buttons[i].SetActive(false);
             }
             buttons[1].SetActive(true);
+            buttons[4].SetActive(true);
+            buttons[5].SetActive(true);
             buttonFunction.text = volumeText;
         }
         else if (cursorPosition == 1 && muted) //Highlight mute
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
                 buttons[i].SetActive(false);
             }
             buttons[3].SetActive(true);
+            buttons[4].SetActive(true);
+            buttons[5].SetActive(true);
             buttonFunction.text = volumeText;
         }
         else if (cursorPosition == 2) //Highlight exit
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 6; i++)
             {
                 buttons[i].SetActive(false);
             }
@@ -85,11 +89,11 @@ public class PauseMenu : MonoBehaviour
 
         if(muted)
         {
-            buttons[4].SetActive(true);
+            buttons[6].SetActive(true);
         }
         else
         {
-            buttons[4].SetActive(false);
+            buttons[6].SetActive(false);
         }
     }
 
