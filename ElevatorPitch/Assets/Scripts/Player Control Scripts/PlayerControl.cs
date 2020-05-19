@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     public AudioClip buttonPress;
     AudioSource source;
     persistentData pd;
+    PauseMenu pauseMenu;
 
     bool paused = false;
     int index;
@@ -29,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     private void Start()
     {
         persistantData = GameObject.FindGameObjectWithTag("persData");
+        pauseMenu = persistantData.GetComponent<PauseMenu>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
         source = gameObject.GetComponent<AudioSource>();
@@ -91,12 +93,13 @@ public class PlayerControl : MonoBehaviour
         if (paused && PauseMenu.cursorPosition == 1)
         {
             //Increase volume
-            PauseMenu.muted = false;
-            AudioListener.volume += 0.1f;
-            if (AudioListener.volume > 1.0)
+            
+            if (AudioListener.volume < 1.0f)
             {
-                AudioListener.volume = 1.0f;
+                AudioListener.volume += 0.1f;
+                PauseMenu.muted = false;
             }
+            pauseMenu.volumeText = "Volume: " + Mathf.RoundToInt(AudioListener.volume * 100.0f) + "%";
         }
     }
 
@@ -105,12 +108,16 @@ public class PlayerControl : MonoBehaviour
         if(paused && PauseMenu.cursorPosition == 1)
         {
             //Decrease volume
-            AudioListener.volume -= 0.1f;
-            if (AudioListener.volume <= 0.0)
+            
+            if (AudioListener.volume > 0.0f)
+            {
+                AudioListener.volume -= 0.1f;
+            }
+            if(AudioListener.volume <= 0.0f)
             {
                 PauseMenu.muted = true;
-                AudioListener.volume = 0.0f;
             }
+            pauseMenu.volumeText = "Volume: " + Mathf.RoundToInt(AudioListener.volume * 100.0f) + "%";
         }
     }
 

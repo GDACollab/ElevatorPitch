@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     public static int cursorPosition; //Controls which option is being hovered over
     public static bool muted = false;
     public static bool justPaused = false;
+    public string volumeText; //This should be whatever the default volume is
 
     // Update is called once per frame
     void Update()
@@ -61,7 +62,7 @@ public class PauseMenu : MonoBehaviour
                 buttons[i].SetActive(false);
             }
             buttons[1].SetActive(true);
-            buttonFunction.text = "Mute Audio";
+            buttonFunction.text = volumeText;
         }
         else if (cursorPosition == 1 && muted) //Highlight mute
         {
@@ -70,7 +71,7 @@ public class PauseMenu : MonoBehaviour
                 buttons[i].SetActive(false);
             }
             buttons[3].SetActive(true);
-            buttonFunction.text = "Mute Audio";
+            buttonFunction.text = volumeText;
         }
         else if (cursorPosition == 2) //Highlight exit
         {
