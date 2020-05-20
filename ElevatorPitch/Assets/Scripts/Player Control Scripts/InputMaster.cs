@@ -89,6 +89,22 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Tap(duration=0.4)""
+                },
+                {
+                    ""name"": ""DownFlick"",
+                    ""type"": ""Button"",
+                    ""id"": ""3100df16-e579-4832-b884-bb5762bafc08"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.4)""
+                },
+                {
+                    ""name"": ""UpFlick"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe35b6da-5add-4dee-a190-7d14b1be3b70"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.4)""
                 }
             ],
             ""bindings"": [
@@ -344,6 +360,72 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""RightFlick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5293dd66-e62c-46f0-9098-df83e59f3dc5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e98ff81b-86a3-4a0f-825f-c3390b838d63"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""807d95c0-87d1-4be6-bad9-fb7169f52636"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dee77d7-f744-4cc8-8706-55edbcce945f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24f6fa4b-c841-4d00-b0e0-f3a652d10d28"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74bc25eb-7f94-4b91-82c3-247b97b5ea42"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpFlick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -361,6 +443,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_IngameControls_Pause = m_IngameControls.FindAction("Pause", throwIfNotFound: true);
         m_IngameControls_LeftFlick = m_IngameControls.FindAction("LeftFlick", throwIfNotFound: true);
         m_IngameControls_RightFlick = m_IngameControls.FindAction("RightFlick", throwIfNotFound: true);
+        m_IngameControls_DownFlick = m_IngameControls.FindAction("DownFlick", throwIfNotFound: true);
+        m_IngameControls_UpFlick = m_IngameControls.FindAction("UpFlick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -419,6 +503,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputAction m_IngameControls_Pause;
     private readonly InputAction m_IngameControls_LeftFlick;
     private readonly InputAction m_IngameControls_RightFlick;
+    private readonly InputAction m_IngameControls_DownFlick;
+    private readonly InputAction m_IngameControls_UpFlick;
     public struct IngameControlsActions
     {
         private @InputMaster m_Wrapper;
@@ -432,6 +518,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
         public InputAction @Pause => m_Wrapper.m_IngameControls_Pause;
         public InputAction @LeftFlick => m_Wrapper.m_IngameControls_LeftFlick;
         public InputAction @RightFlick => m_Wrapper.m_IngameControls_RightFlick;
+        public InputAction @DownFlick => m_Wrapper.m_IngameControls_DownFlick;
+        public InputAction @UpFlick => m_Wrapper.m_IngameControls_UpFlick;
         public InputActionMap Get() { return m_Wrapper.m_IngameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -468,6 +556,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RightFlick.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
                 @RightFlick.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
                 @RightFlick.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnRightFlick;
+                @DownFlick.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnDownFlick;
+                @DownFlick.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnDownFlick;
+                @DownFlick.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnDownFlick;
+                @UpFlick.started -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnUpFlick;
+                @UpFlick.performed -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnUpFlick;
+                @UpFlick.canceled -= m_Wrapper.m_IngameControlsActionsCallbackInterface.OnUpFlick;
             }
             m_Wrapper.m_IngameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -499,6 +593,12 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @RightFlick.started += instance.OnRightFlick;
                 @RightFlick.performed += instance.OnRightFlick;
                 @RightFlick.canceled += instance.OnRightFlick;
+                @DownFlick.started += instance.OnDownFlick;
+                @DownFlick.performed += instance.OnDownFlick;
+                @DownFlick.canceled += instance.OnDownFlick;
+                @UpFlick.started += instance.OnUpFlick;
+                @UpFlick.performed += instance.OnUpFlick;
+                @UpFlick.canceled += instance.OnUpFlick;
             }
         }
     }
@@ -514,5 +614,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnLeftFlick(InputAction.CallbackContext context);
         void OnRightFlick(InputAction.CallbackContext context);
+        void OnDownFlick(InputAction.CallbackContext context);
+        void OnUpFlick(InputAction.CallbackContext context);
     }
 }

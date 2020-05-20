@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
     public AudioClip buttonPress;
     AudioSource source;
     persistentData pd;
+    PauseMenu pauseMenu;
 
     bool paused = false;
     int index;
@@ -29,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     private void Start()
     {
         persistantData = GameObject.FindGameObjectWithTag("persData");
+        pauseMenu = persistantData.GetComponent<PauseMenu>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         index = gameObject.GetComponent<PlayerInput>().playerIndex;
         source = gameObject.GetComponent<AudioSource>();
@@ -86,14 +88,42 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void OnUpFlick()
+    {
+        if (paused && PauseMenu.cursorPosition == 1)
+        {
+            //Increase volume
+            
+            if (AudioListener.volume < 1.0f)
+            {
+                AudioListener.volume += 0.1f;
+                PauseMenu.muted = false;
+            }
+            pauseMenu.volumeText = "Volume: " + Mathf.RoundToInt(AudioListener.volume * 100.0f) + "%";
+        }
+    }
+
+    void OnDownFlick()
+    {
+        if(paused && PauseMenu.cursorPosition == 1)
+        {
+            //Decrease volume
+            
+            if (AudioListener.volume > 0.0f)
+            {
+                AudioListener.volume -= 0.1f;
+            }
+            if(AudioListener.volume <= 0.0f)
+            {
+                PauseMenu.muted = true;
+            }
+            pauseMenu.volumeText = "Volume: " + Mathf.RoundToInt(AudioListener.volume * 100.0f) + "%";
+        }
+    }
+
     void OnMovement(InputValue value)
     {
         move = value.Get<Vector2>();
-    }
-
-    void OnUpButton()
-    {
-        //Debug.Log("North Button Pressed");
     }
 
     void OnDownButton()
@@ -118,6 +148,7 @@ public class PlayerControl : MonoBehaviour
             else if (PauseMenu.cursorPosition == 1)
             {
                 //Mute, could update with full volume control later
+                /*
                 if (PauseMenu.muted)
                 {
                     AudioListener.volume = 1.0f; //Might not work for all audio sources
@@ -128,6 +159,7 @@ public class PlayerControl : MonoBehaviour
                     AudioListener.volume = 0.0f;
                     PauseMenu.muted = true;
                 }
+                */
             }
             else if (PauseMenu.cursorPosition == 2)
             {
