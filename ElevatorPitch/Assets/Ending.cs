@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Tilemaps;
 
 //Written by Santiago Ponce
 //Some code borrowed from VNManager by Jacob Compton
@@ -45,6 +46,24 @@ public class Ending : MonoBehaviour
                 max = next;
                 next = -200;
                 skip[placement[i]] = true;
+            }
+
+            //Choose winner randomly if there is a tie
+            int winners = 0;
+            int bestScore = persistentData.scores[placement[0]];
+            for(int i = 0; i < 4; i++)
+            {
+                if(persistentData.scores[i] == bestScore)
+                {
+                    winners++;
+                }
+            }
+            if(winners > 1) //There is a tie
+            {
+                int tiebreaker = UnityEngine.Random.Range(0, winners);
+                int winner = placement[tiebreaker];
+                placement[tiebreaker] = placement[0]; //Swap randomly chosen winner with top
+                placement[0] = winner;
             }
 
             //Set dialogue. Can be expanded later.
