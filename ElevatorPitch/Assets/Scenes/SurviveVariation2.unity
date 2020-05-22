@@ -1800,7 +1800,7 @@ PrefabInstance:
     - target: {fileID: 6145540662822284824, guid: 41d47fdb9a9d26648b68f6d44dfa8225,
         type: 3}
       propertyPath: endpos
-      value: 3
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 6145540662822284824, guid: 41d47fdb9a9d26648b68f6d44dfa8225,
         type: 3}
@@ -1898,7 +1898,7 @@ PrefabInstance:
     - target: {fileID: 6145540662822284824, guid: 41d47fdb9a9d26648b68f6d44dfa8225,
         type: 3}
       propertyPath: endpos
-      value: 3
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 6145540662822284824, guid: 41d47fdb9a9d26648b68f6d44dfa8225,
         type: 3}
