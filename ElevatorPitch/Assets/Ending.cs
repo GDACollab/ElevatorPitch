@@ -97,12 +97,14 @@ public class Ending : MonoBehaviour
         dialogue.text = dialogueSequence[0];
         yield return new WaitForSeconds(5);
 
-        mainCamera.transform.position = new Vector3(-11.67f, -6.93f, -10f);
+        mainCamera.transform.position = new Vector3(-11.8f, -8.04f, -10f);
+        mainCamera.orthographicSize = 5.7305f;
 
         dialogue.text = dialogueSequence[1];
         yield return new WaitForSeconds(5);
 
-        mainCamera.transform.position = new Vector3(-0.41f, -0.28f, -10f);
+        mainCamera.transform.position = new Vector3(-0.41f, -2.08f, -10f);
+        mainCamera.orthographicSize = 6.43f;
         dialogue.text = dialogueSequence[2];
         persistentData.ending = true;
     }
