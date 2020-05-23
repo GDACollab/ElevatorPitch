@@ -36,7 +36,8 @@ public class Timer : MonoBehaviour
         {
             textDisplay.text = "Time: " + maxTime.ToString();
         }
-        if(!(SceneManager.GetActiveScene().name == "Start") && !(SceneManager.GetActiveScene().name == "Ending")){
+        if (!(SceneManager.GetActiveScene().name == "Start") && !(SceneManager.GetActiveScene().name == "Ending"))
+        {
             StartCoroutine(waitTime());
         }
         else
@@ -65,9 +66,23 @@ public class Timer : MonoBehaviour
             }
         }
 
-        winCondition.goalCompletionCheck(winCondition.gameModeTemplate);
-        //winCondition.GetComponent<WinCondition>().goalCompletionCheck(winCondition.GetComponent<WinCondition>().gameModeTemplate);
+        if (winCondition.gameModeTemplate != -1)
+        {
+            for (int itr = 0; itr < 4; itr++)
+            {
+                if (persistentDataScript.timeUpdated[itr] == false)
+                {
+                    persistentDataScript.setFinishTime(itr, 0);
+                    persistentDataScript.timeUpdated[itr] = true;
+                    //Debug.Log("Set finish time for Player " + itr + " to " + persistentDataScript.finishTimes[itr]);
+                }
+            }
+        }
 
+
+
+
+        winCondition.goalCompletionCheck(winCondition.gameModeTemplate);
 
         //Added by Santiago. Does the elevator door animation before loading next level
         transition.SetTrigger("Close Doors");
@@ -78,12 +93,13 @@ public class Timer : MonoBehaviour
     }
 
 
-    public void doTransition(){
+    public void doTransition()
+    {
         StartCoroutine(closeDoors());
     }
 
-    IEnumerator closeDoors(){
-        Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    IEnumerator closeDoors()
+    {
         elevatorSFX.PlayOneShot(beep);
         transition.SetTrigger("Close Doors");
         yield return new WaitForSeconds(0.8f);

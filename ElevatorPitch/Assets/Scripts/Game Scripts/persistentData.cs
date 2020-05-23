@@ -11,6 +11,7 @@ public class persistentData : MonoBehaviour
     public float[] finishTimes = new float[4];
     public bool[] complete = new bool[4];
     public int[] buttonMash = new int[4];
+    public bool[] timeUpdated = new bool[4];
     //int floorNum;
     //int gamesPlayed;
     private AudioSource audioSource;
@@ -23,6 +24,7 @@ public class persistentData : MonoBehaviour
     public int lives = 4;
     int[] defaultValues = new int[4];
     public bool ending = false; //This value should always be false
+    private int playerCount = 0;
 
     void Start()
     {
@@ -38,6 +40,10 @@ public class persistentData : MonoBehaviour
         //finishTimes[1] = 0;
         //finishTimes[2] = 0;
         //finishTimes[3] = 0;
+        timeUpdated[0] = false;
+        timeUpdated[1] = false;
+        timeUpdated[2] = false;
+        timeUpdated[3] = false;
 
         defaultValues[0] = levelsPlayed;
         defaultValues[1] = currentFloor;
@@ -85,6 +91,7 @@ public class persistentData : MonoBehaviour
     void OnPlayerJoined()
     {
         Debug.Log("PLAYER JOINED");
+        playerCount++;
     }
 
     public void setFinishTime(int playerIndex) //Player index = 0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
@@ -92,6 +99,14 @@ public class persistentData : MonoBehaviour
         Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         string[] temp = timer.textDisplay.text.Split(' ');
         finishTimes[playerIndex] = float.Parse(temp[1]);
+        Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
+    }
+
+    public void setFinishTime(int playerIndex, float time) //Player index = 0: Blaze, 1: Gian, 2: Robyn, 3: Yeet. This one is used to set time to 0 if player didnt touch anything
+    {
+        Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
+        string[] temp = timer.textDisplay.text.Split(' ');
+        finishTimes[playerIndex] = 0;
         Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
     }
 
@@ -126,5 +141,10 @@ public class persistentData : MonoBehaviour
         ending = false;
 
         SceneManager.LoadScene(0); //Load start screen
+    }
+
+    public int getPlayerCount()
+    {
+        return playerCount;
     }
 }
