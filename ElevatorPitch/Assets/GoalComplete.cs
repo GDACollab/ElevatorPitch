@@ -12,7 +12,7 @@ public class GoalComplete : MonoBehaviour
     private PlayerInput playerInput;
     private playerSetup setup;
     public int playerIndex;
-    persistentData perisistentData;
+    persistentData persistentData;
     public AudioClip collide1;
     SoundManager playerAudio;
 
@@ -25,7 +25,7 @@ public class GoalComplete : MonoBehaviour
         setup = GetComponent<playerSetup>();
         playerIndex = setup.controllerIndex;
         goalTag = "goal " + playerIndex;
-        perisistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
+        persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
         //Debug.Log(playerIndex);
     }
     public bool IsGoalComplete
@@ -49,8 +49,9 @@ public class GoalComplete : MonoBehaviour
         {
             IsGoalComplete = true;
             Debug.Log("goal complete");
-            perisistentData.setFinishTime(playerIndex);
-            perisistentData.complete[playerIndex] = true;
+            persistentData.setFinishTime(playerIndex);
+            persistentData.complete[playerIndex] = true;
+            persistentData.timeUpdated[playerIndex] = true;
             //do something with persistant data;
             Destroy(gameObject);
         }
@@ -58,8 +59,9 @@ public class GoalComplete : MonoBehaviour
         {   
             isGoalComplete = false;
             Debug.Log("Hit by enemy");
-            perisistentData.complete[playerIndex] = false;
-            perisistentData.setFinishTime(playerIndex);
+            persistentData.complete[playerIndex] = false;
+            persistentData.setFinishTime(playerIndex);
+            persistentData.timeUpdated[playerIndex] = true;
             playerAudio.playSound(collide1);
             //playerAudio.PlayOneShot(collide1);
             Destroy(gameObject);

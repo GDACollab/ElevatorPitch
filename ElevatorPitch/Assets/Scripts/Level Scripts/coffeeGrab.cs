@@ -49,6 +49,8 @@ public class coffeeGrab : MonoBehaviour
                     Destroy(robynMug);
                     robynGrabbedMug = true;
                     persistentData.setFinishTime(2);
+                    persistentData.complete[2] = true;
+                    persistentData.timeUpdated[2] = true;
                 }
                 break;
             case "blazeCoffeeArm":
@@ -59,6 +61,8 @@ public class coffeeGrab : MonoBehaviour
                     Destroy(blazeMug);
                     blazeGrabbedMug = true;
                     persistentData.setFinishTime(0);
+                    persistentData.complete[0] = true;
+                    persistentData.timeUpdated[0] = true;
                 }
                 break;
             case "gianCoffeeArm":
@@ -69,6 +73,8 @@ public class coffeeGrab : MonoBehaviour
                     Destroy(gianMug);
                     gianGrabbedMug = true;
                     persistentData.setFinishTime(1);
+                    persistentData.complete[1] = true;
+                    persistentData.timeUpdated[1] = true;
                 }
                 break;
             case "yeetCoffeeArm":
@@ -79,6 +85,8 @@ public class coffeeGrab : MonoBehaviour
                     Destroy(yeetMug);
                     yeetGrabbedMug = true;
                     persistentData.setFinishTime(3);
+                    persistentData.complete[3] = true;
+                    persistentData.timeUpdated[3] = true;
                 }
                 break;
             default:
