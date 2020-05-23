@@ -99,7 +99,7 @@ public class persistentData : MonoBehaviour
         Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         string[] temp = timer.textDisplay.text.Split(' ');
         finishTimes[playerIndex] = float.Parse(temp[1]);
-        Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
+        //Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
     }
 
     public void setFinishTime(int playerIndex, float time) //Player index = 0: Blaze, 1: Gian, 2: Robyn, 3: Yeet. This one is used to set time to 0 if player didnt touch anything
@@ -107,7 +107,7 @@ public class persistentData : MonoBehaviour
         Timer timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<Timer>();
         string[] temp = timer.textDisplay.text.Split(' ');
         finishTimes[playerIndex] = 0;
-        Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
+        //Debug.Log("Player " + playerIndex + "'s time is " + finishTimes[playerIndex]);
     }
 
     public void nextLevel()
