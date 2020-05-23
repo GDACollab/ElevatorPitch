@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 453cd4f25b2741e43b2f04e76ec0d6a6
+guid: 9ba9692ec6a32d04fa541e6673371a18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3823920802690406328
-    second: ComputerBackgroundBlake(w_oEmails)_Asset_MeganChau_0
+      213: -8971984265244666838
+    second: YayiIdle_Spritesheet_GriffinConway_0
   - first:
-      213: 1250471996013011051
-    second: ComputerBackgroundBlake(w_oEmails)_Asset_MeganChau_1
+      213: -6701355487373669515
+    second: YayiIdle_Spritesheet_GriffinConway_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,34 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ComputerBackgroundBlake(w_oEmails)_Asset_MeganChau_0
+      name: YayiIdle_Spritesheet_GriffinConway_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2388
-        height: 1668
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d43e557d4f1119248a04ceca4c683147
-      internalID: -3823920802690406328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ComputerBackgroundBlake(w_oEmails)_Asset_MeganChau_1
-      rect:
-        serializedVersion: 2
-        x: 1699
-        y: 627
-        width: 251
-        height: 375
+        x: 141
+        y: 1274
+        width: 284
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +118,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d03b7555b8f9dc4dae3a2d2505ee918
-      internalID: 1250471996013011051
+      spriteID: f5377fc8d6e957e4f8883a11be85a90b
+      internalID: -8971984265244666838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiIdle_Spritesheet_GriffinConway_1
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1271
+        width: 282
+        height: 651
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b25ad894ba71804aad3ae16275a63a5
+      internalID: -6701355487373669515
       vertices: []
       indices: 
       edges: []

@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: a82c6538dc854e1449ab197315bac265
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6554440638122242884
+    second: YayiRunning_Spritesheet_GriffinConway_0
+  - first:
+      213: -6510609019295043117
+    second: YayiRunning_Spritesheet_GriffinConway_1
+  - first:
+      213: -7550893533022585529
+    second: YayiRunning_Spritesheet_GriffinConway_2
+  - first:
+      213: -8827467758886809563
+    second: YayiRunning_Spritesheet_GriffinConway_3
+  - first:
+      213: -2538326247554856625
+    second: YayiRunning_Spritesheet_GriffinConway_4
+  - first:
+      213: 8102298307927909744
+    second: YayiRunning_Spritesheet_GriffinConway_5
+  - first:
+      213: 596481923601449337
+    second: YayiRunning_Spritesheet_GriffinConway_6
+  - first:
+      213: -6874170777665327138
+    second: YayiRunning_Spritesheet_GriffinConway_7
+  - first:
+      213: 5608967772626824638
+    second: YayiRunning_Spritesheet_GriffinConway_8
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1297
+        width: 600
+        height: 641
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4680187}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bd3ef40d3a8c14cb49929701242bd2
+      internalID: 6554440638122242884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1292
+        width: 600
+        height: 646
+      alignment: 9
+      pivot: {x: 0.55, y: 0.4643963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc318a7e24fec9b48adf812917bd0afd
+      internalID: -6510609019295043117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1292
+        width: 600
+        height: 646
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.4643963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a340c1f21f3bed94da2c1260ebd57e38
+      internalID: -7550893533022585529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 637
+        width: 600
+        height: 655
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45801526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b62d9829b202bf48be60f05d0637efb
+      internalID: -8827467758886809563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_4
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 640
+        width: 600
+        height: 649
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.4622496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bb83e3494a29f4fbd3488040d8ae18
+      internalID: -2538326247554856625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 630
+        width: 600
+        height: 659
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.4552352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8a212862d533f46a48f79ca014bfbf
+      internalID: 8102298307927909744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 632
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4643963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23d7a643d5879d47a0f94a4c4d8e915
+      internalID: 596481923601449337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YayiRunning_Spritesheet_GriffinConway_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 631
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.4643963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a41cb44342a87f449cdd33239d4009b
+      internalID: -6874170777665327138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
