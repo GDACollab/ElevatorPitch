@@ -89,6 +89,22 @@ public class Ending : MonoBehaviour
             Debug.Log("Ending ERROR: Did not find Pers Data");
         }
     }
+    
+    /*
+    void Update()
+    {
+        if (dialogue.text == dialogueSequence[1])
+        {
+            while(mainCamera.transform.position != new Vector3(-11.67f, 0.21f, -10f))
+            {
+
+            }
+        }
+        else if(dialogue.text == dialogueSequence[2])
+        {
+
+        }
+    }*/
 
     IEnumerator waitTime()
     {
@@ -133,4 +149,11 @@ public class Ending : MonoBehaviour
             return "You were expecting a player, but it was me, Dio!";
         }
     }
+
+    /*
+    void moveCamera(Camera cam, float speed, Vector3 target)
+    {
+
+    }
+    */
 }
