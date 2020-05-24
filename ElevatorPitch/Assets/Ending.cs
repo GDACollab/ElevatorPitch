@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Tilemaps;
 
 //Written by Santiago Ponce
 //Some code borrowed from VNManager by Jacob Compton
@@ -47,6 +48,24 @@ public class Ending : MonoBehaviour
                 skip[placement[i]] = true;
             }
 
+            //Choose winner randomly if there is a tie
+            int winners = 0;
+            int bestScore = persistentData.scores[placement[0]];
+            for(int i = 0; i < 4; i++)
+            {
+                if(persistentData.scores[i] == bestScore)
+                {
+                    winners++;
+                }
+            }
+            if(winners > 1) //There is a tie
+            {
+                int tiebreaker = UnityEngine.Random.Range(0, winners);
+                int winner = placement[tiebreaker];
+                placement[tiebreaker] = placement[0]; //Swap randomly chosen winner with top
+                placement[0] = winner;
+            }
+
             //Set dialogue. Can be expanded later.
             dialogue.text = "Congratulations, you reached the top floor!\n" + 
                             "For performing the best overall, the new CEO is " + getPlayerName(placement[0]) + "!";
@@ -70,6 +89,22 @@ public class Ending : MonoBehaviour
             Debug.Log("Ending ERROR: Did not find Pers Data");
         }
     }
+    
+    /*
+    void Update()
+    {
+        if (dialogue.text == dialogueSequence[1])
+        {
+            while(mainCamera.transform.position != new Vector3(-11.67f, 0.21f, -10f))
+            {
+
+            }
+        }
+        else if(dialogue.text == dialogueSequence[2])
+        {
+
+        }
+    }*/
 
     IEnumerator waitTime()
     {
@@ -78,12 +113,14 @@ public class Ending : MonoBehaviour
         dialogue.text = dialogueSequence[0];
         yield return new WaitForSeconds(5);
 
-        mainCamera.transform.position = new Vector3(-11.67f, -6.93f, -10f);
+        mainCamera.transform.position = new Vector3(-11.8f, -8.04f, -10f);
+        mainCamera.orthographicSize = 5.7305f;
 
         dialogue.text = dialogueSequence[1];
         yield return new WaitForSeconds(5);
 
-        mainCamera.transform.position = new Vector3(-0.41f, -0.28f, -10f);
+        mainCamera.transform.position = new Vector3(-0.41f, -2.08f, -10f);
+        mainCamera.orthographicSize = 6.43f;
         dialogue.text = dialogueSequence[2];
         persistentData.ending = true;
     }
@@ -112,4 +149,11 @@ public class Ending : MonoBehaviour
             return "You were expecting a player, but it was me, Dio!";
         }
     }
+
+    /*
+    void moveCamera(Camera cam, float speed, Vector3 target)
+    {
+
+    }
+    */
 }
