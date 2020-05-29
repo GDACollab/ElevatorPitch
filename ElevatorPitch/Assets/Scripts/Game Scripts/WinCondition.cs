@@ -107,6 +107,37 @@ public class WinCondition : MonoBehaviour
             case 2: 
                 //
                 break;
+            case 3: 
+                List<int> mash = new List<int>(persistentData.buttonMash);
+                for(int itr = persistentData.getPlayerCount(); itr < 4; itr++)
+                {
+                    mash[itr] = -100;
+                }
+                while (Mathf.Max(mash.ToArray()) != -100)
+                {
+                    //Debug.Log("Times: " + times[0] + ", " + times[1] + ", " + times[2] + ", " + times[3]);
+                    int max = Mathf.Max(mash.ToArray()); //Get fastest time, using max because the timer counts down
+                    int indexOfMax = mash.IndexOf(max);
+                    //Debug.Log("Fastest time: " + max + " at " + indexOfMax);
+                    
+                    int count = 0;
+                    for(int i = 0; i < persistentData.getPlayerCount(); i++) //Check for players w/ same time
+                    {
+                        if(max == mash[i])
+                        {
+                            count++;
+                        }
+                    }
+                    persistentData.scores[indexOfMax] += points; //Give points based on speed
+                    if (count == 1) //If no same scores, reduce points for next person, otherwise give next person same points
+                    {
+                        points--;
+                    }
+                    mash[indexOfMax] = -100;
+                }
+                printDebugScores();
+                break;
+
             default:
                 //default template
                 Debug.Log("Gave no points");
