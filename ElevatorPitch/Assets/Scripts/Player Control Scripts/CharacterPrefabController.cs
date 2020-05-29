@@ -26,11 +26,11 @@ public class CharacterPrefabController : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         gameModeObj = GameObject.FindGameObjectWithTag("GameMode");
-        Debug.Log("Game mode: " + gameModeObj.GetComponent<WinCondition>().gameModeTemplate);
+        //Debug.Log("Game mode: " + gameModeObj.GetComponent<WinCondition>().gameModeTemplate);
         gameMode = gameModeObj.GetComponent<WinCondition>().gameModeTemplate;
         playerControl = gameObject.GetComponent<PlayerControl>();
         playerControl.setGameMode(gameMode);
-        if (!(scene.name == "quips") && !(scene.name == "CoffeeCupGame"))
+        if (!(scene.name == "quips") && !(scene.name == "CoffeeCupGame") && !(scene.name == "emailTemplate"))
         {
             if (scene.name == "Start")
             {
@@ -48,6 +48,8 @@ public class CharacterPrefabController : MonoBehaviour
             var a = GetComponent<PlayerControl>();
             a.enabled = true;
             a.setGameMode(gameMode); //Update gameMode in PlayerControl so it knows what controls to use
+        } else if(scene.name == "emailTemplate") {
+            playerControl.findEmailBars();
         }
     }
 

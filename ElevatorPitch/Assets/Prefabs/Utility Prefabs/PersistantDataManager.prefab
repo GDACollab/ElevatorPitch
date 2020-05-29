@@ -1278,6 +1278,7 @@ MonoBehaviour:
   - 0
   complete: 00000000
   buttonMash: 00000000000000000000000000000000
+  timeUpdated: 00000000
   calmElevatorMusic: {fileID: 8300000, guid: 3ece83cc68d89d14aa0e097f083433a2, type: 3}
   fastMinigameMusic:
   - {fileID: 8300000, guid: 14cd699ee92bfb840b374a6ed6477ece, type: 3}
@@ -1289,6 +1290,11 @@ MonoBehaviour:
   endingFloor: 10
   lives: 4
   ending: 0
+  SceneArray:
+  - m_Handle: 0
+  - m_Handle: 0
+  - m_Handle: 0
+  - m_Handle: 0
 --- !u!114 &796623421156755146
 MonoBehaviour:
   m_ObjectHideFlags: 0

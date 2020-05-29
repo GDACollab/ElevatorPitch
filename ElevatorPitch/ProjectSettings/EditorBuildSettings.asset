@@ -21,17 +21,50 @@ EditorBuildSettings:
     path: Assets/Scenes/Ending.unity
     guid: 6fdecf1d63b490849b683b6662278c99
   - enabled: 1
-    path: Assets/Scenes/CubicleRush.unity
-    guid: 2d028247c8c952e41a2fcf4150cb8506
-  - enabled: 1
-    path: Assets/Scenes/Survive.unity
-    guid: 45705135f19df2c4783fefecf89791cd
-  - enabled: 1
     path: Assets/Scenes/DodgeGame.unity
     guid: b0c390dcd6af25546919a9da982b13dd
   - enabled: 1
     path: Assets/Scenes/CoffeeCupGame.unity
     guid: 07dfdf2df235c3d41bf274185cccce52
+  - enabled: 1
+    path: Assets/Scenes/emailTemplate.unity
+    guid: 8b4e7681b2aac244097502524a3edee9
+  - enabled: 1
+    path: Assets/Scenes/CubicleRush.unity
+    guid: 2d028247c8c952e41a2fcf4150cb8506
+  - enabled: 1
+    path: Assets/Scenes/CubicleRushVariation1.unity
+    guid: 52b115097ccf86043bbce00a13fccd1d
+  - enabled: 1
+    path: Assets/Scenes/CubicleRushVariation2.unity
+    guid: d18f8414d5d0706428fd76d2b4a34f02
+  - enabled: 1
+    path: Assets/Scenes/CubicleRushVariation3.unity
+    guid: 4d18fb55988851f4faa3c20550030804
+  - enabled: 1
+    path: Assets/Scenes/CubicleRushVariation4.unity
+    guid: 2a3deb2488275b443b29e3cd9d459dc6
+  - enabled: 1
+    path: Assets/Scenes/CubicleRushVariation5.unity
+    guid: 5c4535921f02adf4c9281259a927d9d7
+  - enabled: 1
+    path: Assets/Scenes/Survive.unity
+    guid: 45705135f19df2c4783fefecf89791cd
+  - enabled: 1
+    path: Assets/Scenes/SurviveVariation1.unity
+    guid: 5fd0ac944a42cff459b0cbd2fb9307b4
+  - enabled: 1
+    path: Assets/Scenes/SurviveVariation2.unity
+    guid: 162a88d817d9be84daa709c0a1d35d4d
+  - enabled: 1
+    path: Assets/Scenes/SurviveVariation3.unity
+    guid: 2da47013982a4d24f9bc97a2ed115fa5
+  - enabled: 1
+    path: Assets/Scenes/SurviveVariation4.unity
+    guid: a3f964cd88e1cf04ea585a3829f5004a
+  - enabled: 1
+    path: Assets/Scenes/SurviveVariation5.unity
+    guid: a935d8e9fab6a4344948bdc69eb703d9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4d7b30b1a4c2f4a4a9e668f52346c591,
       type: 2}

@@ -26,9 +26,18 @@ public class PlayerControl : MonoBehaviour
     GameObject gianArm;
     GameObject robynArm;
     GameObject yeetArm;
+    GameObject[] emailBars;
 
     private void Start()
     {
+
+        emailBars = null;
+        if (gameMode == 2)
+        {
+            findCoffeeArms();
+        } else if (gameMode == 3) {
+            findEmailBars();
+        }
         persistantData = GameObject.FindGameObjectWithTag("persData");
         pauseMenu = persistantData.GetComponent<PauseMenu>();
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -39,10 +48,7 @@ public class PlayerControl : MonoBehaviour
 
         prefabController = gameObject.GetComponent<CharacterPrefabController>();
         gameMode = prefabController.getGameMode();
-        if (gameMode == 2)
-        {
-            findCoffeeArms();
-        }
+
 
 
     }
@@ -128,7 +134,9 @@ public class PlayerControl : MonoBehaviour
 
     void OnDownButton()
     {
-
+        if(emailBars == null){
+            findEmailBars();
+        }
         if(pd.ending)
         {
             pd.playAgain();
@@ -203,6 +211,9 @@ public class PlayerControl : MonoBehaviour
         else if(gameMode == 3) //Button Mash Game
         {
             persistantData.GetComponent<persistentData>().buttonMash[index]++;
+            foreach(GameObject bar in emailBars) {
+                bar.GetComponent<emailColorSwap>().switchColor();
+            }
         }
     }
 
@@ -255,5 +266,26 @@ public class PlayerControl : MonoBehaviour
         gianArm = GameObject.FindGameObjectWithTag("gianCoffeeArm");
         robynArm = GameObject.FindGameObjectWithTag("robynCoffeeArm");
         yeetArm = GameObject.FindGameObjectWithTag("yeetCoffeeArm");
+    }
+
+    public void findEmailBars()
+    {
+        switch(index){
+            case 0: 
+                emailBars = GameObject.FindGameObjectsWithTag("blakeEmailBar");
+                break;
+            case 1:
+                emailBars = GameObject.FindGameObjectsWithTag("giangEmailBar");
+                break;
+            case 2: 
+                emailBars = GameObject.FindGameObjectsWithTag("robynEmailBar");
+                break;
+            case 3: 
+                emailBars = GameObject.FindGameObjectsWithTag("yeetEmailBar");
+                break;
+            default:
+                break;
+        }
+       
     }
 }

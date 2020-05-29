@@ -32,6 +32,10 @@ TagManager:
   - gianCoffeeArm
   - blazeCoffeeArm
   - yeetCoffeeArm
+  - blakeEmailBar
+  - giangEmailBar
+  - robynEmailBar
+  - yeetEmailBar
   layers:
   - Default
   - TransparentFX
