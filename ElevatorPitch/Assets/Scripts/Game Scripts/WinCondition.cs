@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour
 {
-    [Tooltip("0: Reach goal; 1: Survive; 2: CoffeeGame")]
+    [Tooltip("0: Reach goal; 1: Survive; 2: CoffeeGame; 3: Button Mash")]
     public int gameModeTemplate;
     persistentData persistentData;
 

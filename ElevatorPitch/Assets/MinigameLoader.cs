@@ -26,8 +26,48 @@ public class MinigameLoader : MonoBehaviour
          * Important: If more non-minigame scenes are added, make sure to adjust the firstMinigame variable 
          * to make sure they are not selected by accident
          * */
-        //Debug.Log(SceneManager.sceneCountInBuildSettings);
-        int nextGame = Random.Range(firstMinigame, SceneManager.sceneCountInBuildSettings);
+        //Debug.Log(SceneManager.sceneCountInBuildSettings);firstMinigame, SceneManager.sceneCountInBuildSettings);
+
+        //0: Reach goal; 1: Survive; 2: CoffeeGame; 3: Button Mash; 4: dodge
+        
+        int displayText = 0;
+        int nextGame = Random.Range(0, 4);
+        nextGame = 3;
+        switch(nextGame){
+            case 0: 
+                nextGame = Random.Range(7, 12);
+                displayText = 1;
+                text[1].SetActive(true);
+                Debug.Log("nextGame: " + nextGame);
+                break;
+            case 1: 
+                nextGame = Random.Range(13, 18);
+                displayText = 2;
+                text[2].SetActive(true);
+                Debug.Log("nextGame: " + nextGame);
+                break;
+            case 2: 
+                nextGame = 5;
+                displayText = 4;
+                text[4].SetActive(true);
+                Debug.Log("nextGame: " + nextGame);
+                break;
+            case 3: 
+                nextGame = 6;
+                displayText = 0;
+                //text[displayText].SetActive(true);
+                Debug.Log("nextGame: " + nextGame);
+                break;
+            case 4:
+                nextGame = 4;
+                displayText = 3;
+                text[3].SetActive(true);
+                Debug.Log("nextGame: " + nextGame);
+                break;
+            default: 
+                break;
+        }
+
         persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
         //If we find persistentData, use it to determine levelCount we have gone through
         if (persistentData)
@@ -50,16 +90,9 @@ public class MinigameLoader : MonoBehaviour
         {
             if (x != null) x.SetActive(false);
         }
-        //Add more instructions when adding new minigames
-        int cubicleRush = firstMinigame;
-        Debug.Log("nextGame: " + nextGame);
-        int displayText = nextGame - cubicleRush + 1;
-        if (displayText >= text.Length || displayText < 0) //Minigame does not have a text object
-        {
-            displayText = 0;
-        }
 
-        text[displayText].SetActive(true);
+
+        
 
         /*
         if(nextGame == cubicleRush + 0) //Cubicle rush

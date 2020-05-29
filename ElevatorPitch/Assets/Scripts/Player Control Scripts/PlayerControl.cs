@@ -32,6 +32,12 @@ public class PlayerControl : MonoBehaviour
     {
 
         emailBars = null;
+        if (gameMode == 2)
+        {
+            findCoffeeArms();
+        } else if (gameMode == 3) {
+            findEmailBars();
+        }
         persistantData = GameObject.FindGameObjectWithTag("persData");
         pauseMenu = persistantData.GetComponent<PauseMenu>();
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -42,12 +48,7 @@ public class PlayerControl : MonoBehaviour
 
         prefabController = gameObject.GetComponent<CharacterPrefabController>();
         gameMode = prefabController.getGameMode();
-        if (gameMode == 2)
-        {
-            findCoffeeArms();
-        } else if (gameMode == 3) {
-            findEmailBars();
-        }
+
 
 
     }
@@ -133,7 +134,9 @@ public class PlayerControl : MonoBehaviour
 
     void OnDownButton()
     {
-
+        if(emailBars == null){
+            findEmailBars();
+        }
         if(pd.ending)
         {
             pd.playAgain();

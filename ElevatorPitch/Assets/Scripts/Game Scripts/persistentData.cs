@@ -25,11 +25,12 @@ public class persistentData : MonoBehaviour
     int[] defaultValues = new int[4];
     public bool ending = false; //This value should always be false
     private int playerCount = 0;
-
+    
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        
         //gamesPlayed = 0;
         //floorNum = 0;
         scores[0] = 0;
