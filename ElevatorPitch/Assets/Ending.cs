@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.Tilemaps;
+//using UnityEditor.Tilemaps;
 
 //Written by Santiago Ponce
 //Some code borrowed from VNManager by Jacob Compton

@@ -41,7 +41,7 @@ public class MinigameLoader : MonoBehaviour
                 Debug.Log("nextGame: " + nextGame);
                 break;
             case 1: 
-                nextGame = Random.Range(13, 18);
+                nextGame = Random.Range(14, 18);
                 displayText = 2;
                 text[2].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
@@ -76,9 +76,11 @@ public class MinigameLoader : MonoBehaviour
             {
                 nextGame = 2;
                 maxTime = 1;
+                displayText = 0;
             }
             if (persistentData.currentFloor == persistentData.endingFloor) //Check if players have reached the final floor
             {
+                displayText = 0;
                 nextGame = 3;
             }
             if(persistentData.lives <= 0) //Check if the players have run out of lives
