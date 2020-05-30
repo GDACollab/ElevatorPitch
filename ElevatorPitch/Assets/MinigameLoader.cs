@@ -32,7 +32,7 @@ public class MinigameLoader : MonoBehaviour
         
         int displayText = 0;
         int nextGame = Random.Range(0, 4);
-        nextGame = 3;
+        
         switch(nextGame){
             case 0: 
                 nextGame = Random.Range(7, 12);
