@@ -22,13 +22,17 @@ public class PlayerControl : MonoBehaviour
 
     bool paused = false;
     int index;
+    ParticleSystem blazeParticle;
+    ParticleSystem giangParticle;
+    ParticleSystem robynParticle;
+    ParticleSystem yeetParticle;
     GameObject blazeArm;
     GameObject gianArm;
     GameObject robynArm;
     GameObject yeetArm;
     GameObject[] emailBars;
 
-    private void Start()
+    private void Awake() 
     {
 
         emailBars = null;
@@ -137,10 +141,14 @@ public class PlayerControl : MonoBehaviour
         if(emailBars == null){
             findEmailBars();
         }
-        if(pd.ending)
-        {
-            pd.playAgain();
+
+        if(pd != null){
+            if(pd.ending)
+            {
+                pd.playAgain();
+            }
         }
+
 
         Debug.Log("South Button Pressed. Gamemode: " + gameMode);
         if (paused)
@@ -209,7 +217,38 @@ public class PlayerControl : MonoBehaviour
             }
         }
         else if(gameMode == 3) //Button Mash Game
-        {
+        {   
+
+            switch(index){
+                case 0: 
+                    if(blazeParticle.isPlaying){
+                        blazeParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    }
+                    blazeParticle.Play(true);
+                    break;
+                case 1:
+                    if(giangParticle.isPlaying){
+                        giangParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    }
+                    giangParticle.Play(true);
+                    break;
+                case 2: 
+                    if(robynParticle.isPlaying){
+                        robynParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    }
+                    robynParticle.Play(true);
+                    break;
+                case 3: 
+                    if(yeetParticle.isPlaying){
+                        yeetParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    }
+                    yeetParticle.Play(true);
+                    break;
+                default:
+                    break;
+            }
+
+            
             persistantData.GetComponent<persistentData>().buttonMash[index]++;
             foreach(GameObject bar in emailBars) {
                 bar.GetComponent<emailColorSwap>().switchColor();
@@ -273,15 +312,19 @@ public class PlayerControl : MonoBehaviour
         switch(index){
             case 0: 
                 emailBars = GameObject.FindGameObjectsWithTag("blakeEmailBar");
+                blazeParticle = GameObject.FindGameObjectWithTag("blazeParticle").GetComponent<ParticleSystem>();
                 break;
             case 1:
                 emailBars = GameObject.FindGameObjectsWithTag("giangEmailBar");
+                giangParticle = GameObject.FindGameObjectWithTag("giangParticle").GetComponent<ParticleSystem>();
                 break;
             case 2: 
                 emailBars = GameObject.FindGameObjectsWithTag("robynEmailBar");
+                robynParticle = GameObject.FindGameObjectWithTag("robynParticle").GetComponent<ParticleSystem>();
                 break;
             case 3: 
                 emailBars = GameObject.FindGameObjectsWithTag("yeetEmailBar");
+                yeetParticle = GameObject.FindGameObjectWithTag("yeetParticle").GetComponent<ParticleSystem>();
                 break;
             default:
                 break;
