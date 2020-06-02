@@ -37,6 +37,9 @@ TagManager:
   - robynEmailBar
   - yeetEmailBar
   - blazeParticle
+  - giangParticle
+  - robynParticle
+  - yeetParticle
   layers:
   - Default
   - TransparentFX
