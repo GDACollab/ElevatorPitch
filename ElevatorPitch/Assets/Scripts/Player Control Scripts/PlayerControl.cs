@@ -175,7 +175,7 @@ public class PlayerControl : MonoBehaviour
                 Application.Quit(); //Maybe replace this with going to the start screen?
             }
         }
-        else if (gameMode == 2) //Coffee Game
+        else if (gameMode == 2 && Time.timeScale > 0) //Coffee Game
         {
             switch (index) //0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
             {
@@ -208,7 +208,7 @@ public class PlayerControl : MonoBehaviour
                     break;
             }
         }
-        else if(gameMode == 3) //Button Mash Game
+        else if(gameMode == 3 && Time.timeScale > 0) //Button Mash Game
         {
             persistantData.GetComponent<persistentData>().buttonMash[index]++;
             foreach(GameObject bar in emailBars) {

@@ -54,8 +54,8 @@ public class MinigameLoader : MonoBehaviour
                 break;
             case 3: 
                 nextGame = 6;
-                displayText = 0;
-                //text[displayText].SetActive(true);
+                displayText = 5;
+                text[displayText].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
                 break;
             case 4:

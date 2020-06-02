@@ -16,9 +16,9 @@ public class CoffeeTable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (table)
+        if (table && Time.timeScale > 0)
         {
-            transform.Rotate(Vector3.back * rotationMultiplier);
+            transform.Rotate(Vector3.back * rotationMultiplier * Time.deltaTime * 150); //Made not dependent on framerate
         }
     }
 }
