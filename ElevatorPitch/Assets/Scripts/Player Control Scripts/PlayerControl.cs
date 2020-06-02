@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
     GameObject yeetArm;
     GameObject[] emailBars;
 
-    private void Awake() 
+    private void Awake()
     {
 
         emailBars = null;
@@ -103,7 +103,7 @@ public class PlayerControl : MonoBehaviour
         if (paused && PauseMenu.cursorPosition == 1)
         {
             //Increase volume
-            
+
             if (AudioListener.volume < 1.0f)
             {
                 AudioListener.volume += 0.1f;
@@ -118,7 +118,7 @@ public class PlayerControl : MonoBehaviour
         if(paused && PauseMenu.cursorPosition == 1)
         {
             //Decrease volume
-            
+
             if (AudioListener.volume > 0.0f)
             {
                 AudioListener.volume -= 0.1f;
@@ -183,7 +183,7 @@ public class PlayerControl : MonoBehaviour
                 Application.Quit(); //Maybe replace this with going to the start screen?
             }
         }
-        else if (gameMode == 2) //Coffee Game
+        else if (gameMode == 2 && Time.timeScale > 0) //Coffee Game
         {
             switch (index) //0: Blaze, 1: Gian, 2: Robyn, 3: Yeet
             {
@@ -216,11 +216,12 @@ public class PlayerControl : MonoBehaviour
                     break;
             }
         }
-        else if(gameMode == 3) //Button Mash Game
-        {   
+
+        else if(gameMode == 3 && Time.timeScale > 0)//Button Mash Game
+        {
 
             switch(index){
-                case 0: 
+                case 0:
                     if(blazeParticle.isPlaying){
                         blazeParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                     }
@@ -232,13 +233,13 @@ public class PlayerControl : MonoBehaviour
                     }
                     giangParticle.Play(true);
                     break;
-                case 2: 
+                case 2:
                     if(robynParticle.isPlaying){
                         robynParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                     }
                     robynParticle.Play(true);
                     break;
-                case 3: 
+                case 3:
                     if(yeetParticle.isPlaying){
                         yeetParticle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                     }
@@ -247,8 +248,6 @@ public class PlayerControl : MonoBehaviour
                 default:
                     break;
             }
-
-            
             persistantData.GetComponent<persistentData>().buttonMash[index]++;
             foreach(GameObject bar in emailBars) {
                 bar.GetComponent<emailColorSwap>().switchColor();
@@ -310,7 +309,7 @@ public class PlayerControl : MonoBehaviour
     public void findEmailBars()
     {
         switch(index){
-            case 0: 
+            case 0:
                 emailBars = GameObject.FindGameObjectsWithTag("blakeEmailBar");
                 blazeParticle = GameObject.FindGameObjectWithTag("blazeParticle").GetComponent<ParticleSystem>();
                 break;
@@ -318,17 +317,17 @@ public class PlayerControl : MonoBehaviour
                 emailBars = GameObject.FindGameObjectsWithTag("giangEmailBar");
                 giangParticle = GameObject.FindGameObjectWithTag("giangParticle").GetComponent<ParticleSystem>();
                 break;
-            case 2: 
+            case 2:
                 emailBars = GameObject.FindGameObjectsWithTag("robynEmailBar");
                 robynParticle = GameObject.FindGameObjectWithTag("robynParticle").GetComponent<ParticleSystem>();
                 break;
-            case 3: 
+            case 3:
                 emailBars = GameObject.FindGameObjectsWithTag("yeetEmailBar");
                 yeetParticle = GameObject.FindGameObjectWithTag("yeetParticle").GetComponent<ParticleSystem>();
                 break;
             default:
                 break;
         }
-       
+
     }
 }

@@ -32,7 +32,6 @@ public class PauseMenu : MonoBehaviour
             //Set button elements to default
             //First button = active, 
             cursorPosition = 0;
-            buttons[0].SetActive(true);
             for (int i = 0; i < 3; i++)
             {
                 buttons[i].SetActive(false);
