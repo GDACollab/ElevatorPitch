@@ -29,50 +29,59 @@ public class MinigameLoader : MonoBehaviour
         //Debug.Log(SceneManager.sceneCountInBuildSettings);firstMinigame, SceneManager.sceneCountInBuildSettings);
 
         //0: Reach goal; 1: Survive; 2: CoffeeGame; 3: Button Mash; 4: dodge
-        
+
+        persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
         int displayText = 0;
         int nextGame = Random.Range(0, 4);
-        
+        while(nextGame == persistentData.lastGame)
+        {
+            nextGame = Random.Range(0, 4);
+        }
+
         switch(nextGame){
             case 0: 
                 nextGame = Random.Range(7, 12);
                 displayText = 1;
                 text[1].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
+                persistentData.lastGame = 0;
                 break;
             case 1: 
                 nextGame = Random.Range(14, 18);
                 displayText = 2;
                 text[2].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
+                persistentData.lastGame = 1;
                 break;
             case 2: 
                 nextGame = 5;
                 displayText = 4;
                 text[4].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
+                persistentData.lastGame = 2;
                 break;
             case 3: 
                 nextGame = 6;
                 displayText = 0;
                 //text[displayText].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
+                persistentData.lastGame = 3;
                 break;
             case 4:
                 nextGame = 4;
                 displayText = 3;
                 text[3].SetActive(true);
                 Debug.Log("nextGame: " + nextGame);
+                persistentData.lastGame = 4;
                 break;
             default: 
                 break;
         }
 
-        persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
         //If we find persistentData, use it to determine levelCount we have gone through
         if (persistentData)
         {
-            if (persistentData.levelsPlayed%levelsTillQuips == 0) //Check if its been 3 levels
+            if (persistentData.levelsPlayed % levelsTillQuips == 0) //Check if its been 3 levels
             {
                 nextGame = 2;
                 maxTime = 1;
@@ -83,7 +92,7 @@ public class MinigameLoader : MonoBehaviour
                 displayText = 0;
                 nextGame = 3;
             }
-            if(persistentData.lives <= 0) //Check if the players have run out of lives
+            if (persistentData.lives <= 0) //Check if the players have run out of lives
             {
                 gameOver = true;
             }
@@ -92,9 +101,6 @@ public class MinigameLoader : MonoBehaviour
         {
             if (x != null) x.SetActive(false);
         }
-
-
-        
 
         /*
         if(nextGame == cubicleRush + 0) //Cubicle rush

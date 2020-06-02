@@ -25,7 +25,8 @@ public class persistentData : MonoBehaviour
     int[] defaultValues = new int[4];
     public bool ending = false; //This value should always be false
     private int playerCount = 0;
-    
+    public int lastGame = 2; //0: Reach goal; 1: Survive; 2: CoffeeGame; 3: Button Mash; 4: dodge
+
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -91,7 +92,6 @@ public class persistentData : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 
     void OnPlayerJoined()
     {
