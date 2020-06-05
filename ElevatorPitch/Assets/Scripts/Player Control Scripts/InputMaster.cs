@@ -231,17 +231,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9fe6fa28-9382-4e57-8d55-573af46201b4"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftButton"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ba9d7eb9-cdaf-4640-a2aa-17a199e29820"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
@@ -253,8 +242,8 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e73f70ac-99d8-4229-8f8e-35ca9c9e364e"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""dec16708-65d8-4cc2-8a8a-bf19a059fc79"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -17,6 +17,9 @@ public class Ending : MonoBehaviour
     TextMeshProUGUI dialogue;
     string[] dialogueSequence = new string[3];
     Camera mainCamera;
+    [Header("Do not change")]
+    public int progress = 0;
+    public float timer = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -82,47 +85,52 @@ public class Ending : MonoBehaviour
             //Set ending card
             endingCards[placement[0]].SetActive(true);
 
-            StartCoroutine(waitTime());
+            //StartCoroutine(waitTime());
         }
         else
         {
             Debug.Log("Ending ERROR: Did not find Pers Data");
         }
     }
-    
-    /*
-    void Update()
-    {
-        if (dialogue.text == dialogueSequence[1])
-        {
-            while(mainCamera.transform.position != new Vector3(-11.67f, 0.21f, -10f))
-            {
-
-            }
-        }
-        else if(dialogue.text == dialogueSequence[2])
-        {
-
-        }
-    }*/
 
     IEnumerator waitTime()
     {
-        mainCamera.transform.position = new Vector3(-11.67f, 0.21f, -10f);
-        mainCamera.orthographicSize = 4.5f;
-        dialogue.text = dialogueSequence[0];
-        yield return new WaitForSeconds(5);
+        //Auto-advance text every 10 seconds.
+        yield return new WaitForSeconds(10);
+        progress++;
+        yield return new WaitForSeconds(10);
+        progress++;
+    }
 
-        mainCamera.transform.position = new Vector3(-11.8f, -8.04f, -10f);
-        mainCamera.orthographicSize = 5.7305f;
+    void Update()
+    {
+        if(progress == 0)
+        {
+            mainCamera.transform.position = new Vector3(-11.67f, 0.21f, -10f);
+            mainCamera.orthographicSize = 4.5f;
+            dialogue.text = dialogueSequence[0];
+            
+        }
+        else if(progress == 1)
+        {
+            mainCamera.transform.position = new Vector3(-11.8f, -8.04f, -10f);
+            mainCamera.orthographicSize = 5.7305f;
+            dialogue.text = dialogueSequence[1];
+        }
+        else
+        {
+            mainCamera.transform.position = new Vector3(-0.41f, -2.08f, -10f);
+            mainCamera.orthographicSize = 6.43f;
+            dialogue.text = dialogueSequence[2];
+            persistentData.ending = true;
+        }
 
-        dialogue.text = dialogueSequence[1];
-        yield return new WaitForSeconds(5);
-
-        mainCamera.transform.position = new Vector3(-0.41f, -2.08f, -10f);
-        mainCamera.orthographicSize = 6.43f;
-        dialogue.text = dialogueSequence[2];
-        persistentData.ending = true;
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            progress++;
+            timer = 10f;
+        }
     }
 
     //Returns the name of the corresponding player. Pretty simple.

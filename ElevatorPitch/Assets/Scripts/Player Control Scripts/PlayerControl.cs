@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     AudioSource source;
     persistentData pd;
     PauseMenu pauseMenu;
+    Ending endingScript;
 
     bool paused = false;
     int index;
@@ -49,6 +50,7 @@ public class PlayerControl : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
 
         pd = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>();
+        endingScript = GameObject.FindGameObjectWithTag("EndingScript").GetComponent<Ending>();
 
         prefabController = gameObject.GetComponent<CharacterPrefabController>();
         gameMode = prefabController.getGameMode();
@@ -142,8 +144,14 @@ public class PlayerControl : MonoBehaviour
             findEmailBars();
         }
 
-        if(pd != null){
-            if(pd.ending)
+        if(pd != null){ //If persistent data is present
+            if(endingScript != null)
+            {
+                endingScript.progress++; //Skip dialogue
+                endingScript.timer = 10f;
+            }
+
+            if (pd.ending)
             {
                 pd.playAgain();
             }

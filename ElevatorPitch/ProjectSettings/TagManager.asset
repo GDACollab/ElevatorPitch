@@ -40,6 +40,7 @@ TagManager:
   - giangParticle
   - robynParticle
   - yeetParticle
+  - EndingScript
   layers:
   - Default
   - TransparentFX

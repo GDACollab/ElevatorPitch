@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 461304754}
   m_Layer: 0
   m_Name: EndingScript
-  m_TagString: Untagged
+  m_TagString: EndingScript
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,6 +389,8 @@ MonoBehaviour:
   - {fileID: 1453147057}
   - {fileID: 1708697486}
   - {fileID: 1428290332}
+  progress: 0
+  timer: 10
 --- !u!1 &476948434
 GameObject:
   m_ObjectHideFlags: 0
