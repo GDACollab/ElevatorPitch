@@ -276,8 +276,15 @@ public class PlayerControl : MonoBehaviour
 
                 pawn.transform.localPosition = pawn.transform.localPosition += new Vector3(move.x * movementSpeed * Time.deltaTime, move.y * movementSpeed * Time.deltaTime);
                 Rotation();
+                
+            }
+            if(Mathf.Abs(move.x) < 0.1) {
+                 pawn.GetComponent<Animator>().SetFloat("yVel", Mathf.Abs(move.y));
+            } else { 
+                pawn.GetComponent<Animator>().SetFloat("yVel", 0);
             }
             pawn.GetComponent<Animator>().SetFloat("xVel", Mathf.Abs(move.x));
+            
             if(move.x < 0){
                 pawn.GetComponent<SpriteRenderer>().flipX = true;
             } else {
