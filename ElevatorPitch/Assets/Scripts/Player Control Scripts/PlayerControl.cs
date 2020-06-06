@@ -145,15 +145,10 @@ public class PlayerControl : MonoBehaviour
         }
 
         if(pd != null){ //If persistent data is present
-            if(endingScript != null)
-            {
-                endingScript.progress++; //Skip dialogue
-                endingScript.timer = 10f;
-            }
-
-            if (pd.ending)
+            if (pd.ending && gameMode == -2)
             {
                 pd.playAgain();
+                pd.ending = false;
             }
         }
 
@@ -338,4 +333,29 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    /*
+     * else if(gameMode == -2 && Time.timeScale > 0) //Ending
+        {
+            if (endingScript == null)
+            {
+                endingScript = GameObject.FindGameObjectWithTag("EndingScript").GetComponent<Ending>();
+                endingScript.progress++; //Skip dialogue
+                endingScript.timer = 10f;
+            }
+            else
+            {
+                if(pd.ending)
+                {
+                    pd.playAgain();
+                }
+                else
+                {
+                    endingScript.progress++; //Skip dialogue
+                    endingScript.timer = 10f;
+                }
+                
+            }
+        }
+     */
 }

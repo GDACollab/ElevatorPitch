@@ -19,7 +19,7 @@ public class Ending : MonoBehaviour
     Camera mainCamera;
     [Header("Do not change")]
     public int progress = 0;
-    public float timer = 10f;
+    public float timer = 6f;
 
     // Start is called before the first frame update
     void Start()
@@ -96,9 +96,9 @@ public class Ending : MonoBehaviour
     IEnumerator waitTime()
     {
         //Auto-advance text every 10 seconds.
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(6);
         progress++;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(6);
         progress++;
     }
 
@@ -129,7 +129,7 @@ public class Ending : MonoBehaviour
         if(timer <= 0)
         {
             progress++;
-            timer = 10f;
+            timer = 6f;
         }
     }
 
