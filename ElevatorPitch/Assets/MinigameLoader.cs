@@ -32,10 +32,10 @@ public class MinigameLoader : MonoBehaviour
 
         persistentData = GameObject.FindGameObjectWithTag("persData").GetComponent<persistentData>(); //Get PersistentData
         int displayText = 0;
-        int nextGame = Random.Range(0, 4);
+        int nextGame = Random.Range(0, 5);
         while(nextGame == persistentData.lastGame)
         {
-            nextGame = Random.Range(0, 4);
+            nextGame = Random.Range(0, 5);
         }
 
         switch(nextGame){
