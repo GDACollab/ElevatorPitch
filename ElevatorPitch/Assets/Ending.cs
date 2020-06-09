@@ -80,7 +80,9 @@ public class Ending : MonoBehaviour
                                   "Press A or SPACEBAR to play again.";
 
             //Set ending card
-            endingCards[placement[0]].SetActive(true);
+            //endingCards[placement[0]].SetActive(true);
+            mainCamera.transform.position = new Vector3(-30.29f, -8.18f, -10f);
+            mainCamera.orthographicSize = 4.5f;
 
             StartCoroutine(waitTime());
         }
@@ -108,6 +110,9 @@ public class Ending : MonoBehaviour
 
     IEnumerator waitTime()
     {
+
+        endingCards[placement[0]].SetActive(true);
+
         mainCamera.transform.position = new Vector3(-11.67f, 0.21f, -10f);
         mainCamera.orthographicSize = 4.5f;
         dialogue.text = dialogueSequence[0];
