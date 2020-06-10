@@ -111,6 +111,11 @@ public class Ending : MonoBehaviour
     IEnumerator waitTime()
     {
 
+        mainCamera.transform.position = new Vector3(-30.29f, -8.18f, -10f);
+        mainCamera.orthographicSize = 6f;
+        dialogue.text = "Great Elevator Pitch Gamers... Now who's ready to be the CEO?";
+        yield return new WaitForSeconds(5);
+
         endingCards[placement[0]].SetActive(true);
 
         mainCamera.transform.position = new Vector3(-11.67f, 0.21f, -10f);
